@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "./loader.css";
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+a:active {
+  color: inherit;
+}
+
+html {
+  font-family: "Hind Madurai", sans-serif;
+  @apply text-sm;
+}
+
+.chat {
+  @apply relative w-full h-full max-h-[100dvh] flex-1 flex flex-col max-w-4xl gap-2;
+
+  .inputBar {
+    @apply bg-highlight relative max-h-[fit] w-full flex gap-2 p-2 mb-0 pt-4 rounded-t-lg;
+  }
+
+  .chatInput {
+    @apply w-full mr-16;
+  }
+
+  .messageWrapper {
+    @apply flex flex-col justify-end overflow-y-scroll p-1  gap-2 pb-9;
+    height: calc(100dvh - 40px);
+  }
+
+  .typingIndicator {
+    @apply justify-center items-center gap-2 mx-2;
+  }
+
+  .message {
+    @apply bg-neutral-900 p-4 shadow-sm rounded-sm text-base font-medium w-full;
+  }
+
+  .welcomeMessage {
+    @apply flex flex-col justify-center items-center gap-2 mx-2;
+  }
+}
+
+.messagesExample {
+  height: 1000px;
+}
+
+input[type="search"] {
+  -webkit-appearance: none;
+}
+
+::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+input {
+  outline: none;
+  background-image: none;
+  border-width: 1px 1px 1px 1px !important;
+
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  @apply border border-neutral-500 rounded-sm;
+}

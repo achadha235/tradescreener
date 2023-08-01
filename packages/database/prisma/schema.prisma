@@ -1,0 +1,32 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              String     @id
+  name            String?
+  nickname        String?
+  picture         String?
+  email           String     @unique
+  email_verified  Boolean    @default(false)
+  sub             String?    @unique
+  data            Json?
+  stripeAccountId String?
+  screeners       Screener[]
+}
+
+model Screener {
+  id           String  @id @default(uuid())
+  name         String?
+  screenerData Json?
+  userId       String
+  user         User    @relation(fields: [userId], references: [id])
+}

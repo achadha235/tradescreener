@@ -1,0 +1,1 @@
+redis-cli -u redis://localhost:6380 -n 0 FLUSHALL

@@ -1,0 +1,12 @@
+{
+    "name": "queue-monitor",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "node app.js"
+    },
+    "dependencies": {
+        "@bull-board/express": "^5.7.1",
+        "bullmq": "^4.6.2"
+    }
+}

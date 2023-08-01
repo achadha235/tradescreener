@@ -1,0 +1,2882 @@
+[
+    {
+        "name": "Open Price",
+        "tag": "open_price",
+        "definition": "",
+        "statements": "Current",
+        "type": "Prices",
+        "units": "USD per Share",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Low Price",
+        "tag": "low_price",
+        "definition": "",
+        "statements": "Current",
+        "type": "Prices",
+        "units": "USD per Share",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Tangible Book Value per Share",
+        "tag": "tangbookvaluepershare",
+        "definition": "A tangible book value per share is a method of valuing a company on a per-share basis by measuring its equity after removing any intangible assets. It focuses solely on the value of an organizations tangible assets. Once the value of the tangible assets is determined, that amount is divided by the number of shares currently outstanding.",
+        "statements": "Calculations",
+        "type": "Metric",
+        "units": "USD per Share",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Tax Burden Percent",
+        "tag": "taxburdenpct",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Profitability",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Total Capital",
+        "tag": "totalcapital",
+        "definition": "Total capital usually refers to the sum of long-term debt and total shareholder equity; both of these items can be found on the company's balance sheet. This is one of the calculations that's traditionally used when determining a company's return on capital.",
+        "statements": "Calculations",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "ROIC Less NNEP Spread",
+        "tag": "roicnnepspread",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Effectiveness",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "SG&A Expenses to Revenue",
+        "tag": "sgaextorevenue",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Profitability",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Total Debt",
+        "tag": "debt",
+        "definition": "Total debt shows a business's overall financial situation by subtracting the total value of a company's liabilities and debts from the total value of its cash, cash equivalents and other liquid assets. All the information necessary to determine a company's net debt can be found on its balance sheet.",
+        "statements": "Calculations",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Short-Term Debt to Total Capital",
+        "tag": "stdebttocap",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Capital Structure",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Weighted Average Basic Shares Outstanding",
+        "tag": "weightedavebasicsharesos",
+        "definition": "The weighted average of outstanding shares is a calculation that incorporates any changes in the amount of outstanding shares over a reporting period. It is an important number, as it is used to calculate key financial measures such as earnings per share (EPS) for the time period. The amount of shares outstanding in a company will often change due to a company issuing new shares, repurchasing and retiring existing shares, and other financial instruments such as employee options being converted into shares.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "Shares",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Weighted Average Diluted Shares Outstanding",
+        "tag": "weightedavedilutedsharesos",
+        "definition": "The weighted average of diluted outstanding shares is a calculation that incorporates any changes in the amount of outstanding shares over a reporting period. Diluted shares outstanding includes all shares that would be created upon conversion into shares.  Convertible securities are all outstanding convertible preferred shares, convertible debentures, stock options (primarily employee-based) and warrants.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "Shares",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Total Pre-Tax Income",
+        "tag": "totalpretaxincome",
+        "definition": "The pre-tax income is the sum of total operating income and total nonoperating income for the company, before taxes.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Total Interest Expense",
+        "tag": "totalinterestexpense",
+        "definition": "Interest expense on the income statement represents interest accrued during the period covered by the financial statements, and not the amount of interest paid over that period. While interest expense is tax-deductible for companies, in an individual's case, it depends on his or her jurisdiction and also on the loan's purpose.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Weighted Average Basic & Diluted Shares Outstanding",
+        "tag": "weightedavebasicdilutedsharesos",
+        "definition": "",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "Shares",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Total Revenue",
+        "tag": "totalrevenue",
+        "definition": "Revenue is the amount of money that a company actually receives during a specific period, including discounts and deductions for returned merchandise. It is the \"top line\" or \"gross income\" figure from which costs are subtracted to determine net income.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Total Operating Income",
+        "tag": "totaloperatingincome",
+        "definition": "The total operating income represents the income generated by the operations of the company, not including non operating income/(expense) nor income taxes.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Total Operating Expenses",
+        "tag": "totaloperatingexpenses",
+        "definition": "The total operating expenses are the sum of all operating expenses and charges.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Total Cost of Revenue",
+        "tag": "totalcostofrevenue",
+        "definition": "There total cost of revenue are all costs and expenses related to the production and sale of a companies goods and services.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Selling, General & Admin Expense",
+        "tag": "sgaexpense",
+        "definition": "Selling, general and administrative expenses (SG&A) are reported on the income statement as the sum of all direct and indirect selling expenses and all general and administrative expenses of a company. There are many factors that go into manufacturing a product, such as a warranty, and therefore SG&A expenses are deducted to generate a net income. SG&A expenses are also monitored to ensure proper cash flow is being managed.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Total Interest Income",
+        "tag": "totalinterestincome",
+        "definition": "Total interest income is the sum of all interest receive by the company during the period.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Restructuring Charge",
+        "tag": "restructuringcharge",
+        "definition": "A restructuring charge is a one-time cost that must be paid by a company when it reorganizes. A restructuring charge might be incurred in the process of furloughing or laying off employees, closing manufacturing plants, shifting production to a new location or writing off assets. When a company restructures, it is usually experiencing significant problems and restructuring is an attempt to improve the business and recover financially.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Total Gross Profit",
+        "tag": "totalgrossprofit",
+        "definition": "Gross profit is a company's total revenue (equivalent to total sales) minus the cost of goods sold. Gross profit is the profit a company makes after deducting the costs associated with making and selling its products, or the costs associated with providing its services.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Repurchase of Preferred Equity",
+        "tag": "repurchaseofpreferredequity",
+        "definition": "Stock repurchase may be viewed as an alternative to paying dividends in that it is another method of returning cash to investors. A stock repurchase occurs when a company asks stockholders to tender their shares for repurchase by the company. There are several reasons why a stock repurchase can increase value for stockholders. First, a repurchase can be used to restructure the company's capital structure without increasing the company's debt load. Additionally, rather than a company changing its dividend policy, it can offer value to its stockholders through stock repurchases, keeping in mind that capital gains taxes are lower than taxes on dividends.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Sale and/or Maturity of Investments",
+        "tag": "saleofinvestments",
+        "definition": "The sale of investment are the total amount of proceeds from the sale or maturity of investments during the period.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Sale of Property, Leasehold Improvements and Equipment",
+        "tag": "saleofplantpropertyandequipment",
+        "definition": "The sale of PP&E is the amount received by the company from the sale of PP&E during the period.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Repurchase of Common Equity",
+        "tag": "repurchaseofcommonequity",
+        "definition": "Stock repurchase may be viewed as an alternative to paying dividends in that it is another method of returning cash to investors. A stock repurchase occurs when a company asks stockholders to tender their shares for repurchase by the company. There are several reasons why a stock repurchase can increase value for stockholders. First, a repurchase can be used to restructure the company's capital structure without increasing the company's debt load. Additionally, rather than a company changing its dividend policy, it can offer value to its stockholders through stock repurchases, keeping in mind that capital gains taxes are lower than taxes on dividends.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Purchase of Property, Leasehold Improvements and Equipment",
+        "tag": "purchaseofplantpropertyandequipment",
+        "definition": "Property, plant and equipment (PP&E) is a company asset that is vital to business operations but cannot be easily liquidated, and depending on the nature of a company's business, the total value of PP&E can range from very low to extremely high compared to total assets. International accounting standard 16 deals with the accounting treatment of PP&E. It is listed separately in most financial statements because it is treated differently in accounting statements, and improvements, replacements and betterments can pose accounting issues depending on how the costs are recorded.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Research & Development Expense",
+        "tag": "rdexpense",
+        "definition": "Research and development (R&D) describes activity or expense associated with the research and development of a company's goods or services. R&D expenses are a type of operating expense and can be deducted as such on a business tax return. This type of expense is incurred in the process of finding and creating new products or services.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Repayment of Debt",
+        "tag": "repaymentofdebt",
+        "definition": "Repayment is the act of paying back money previously borrowed from a lender. Repayment usually takes the form of periodic payments that normally include part principal plus interest in each payment. Failure to keep up with repayments of debt can force a person to declare bankruptcy and severely affect his credit rating.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Purchase of Investment Securities",
+        "tag": "purchaseofinvestments",
+        "definition": "The purchase of investment is the total amount paid by the company to accumulate new investments not held until the current period.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Other Special Charges",
+        "tag": "otherspecialcharges",
+        "definition": "Other special charges are all other charges that are not considered impairment or restructuring, but are one-off in nature and not expected to continue forever.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Other Investing Activities, net",
+        "tag": "otherinvestingactivitiesnet",
+        "definition": "Other investment activities are all amounts that are not classified by other line items in the investing activities section.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Preferred Stock Dividends Declared",
+        "tag": "preferreddividends",
+        "definition": "A preferred dividend is a dividend that is accrued and paid on a company's preferred shares. In the event that a company is unable to pay all dividends, claims to preferred dividends take precedence over claims to dividends that are paid on common shares. The main benefit of preferred stock is that it typically pays much higher dividend rates than common stock of the same company.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Payment of Dividends",
+        "tag": "paymentofdividends",
+        "definition": "A cash dividend is money paid to stockholders, normally out of the corporation's current earnings or accumulated profits. Not all companies pay a dividend. Usually, the board of directors determines if a dividend is desirable for their particular company based upon various financial and economic factors.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Other Income / (Expense), net",
+        "tag": "otherincome",
+        "definition": "Other income / (expense) includes all other nonoperating income and expenses.  Non operating activities are generally anything outside the core operating activities of the company and may include income or loses related to financing activities or nonoperating investing activities.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Other Financing Activities, Net",
+        "tag": "otherfinancingactivitiesnet",
+        "definition": "Other financing activities are all amounts that are not classified by other line items in the financing activities section.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Other Operating Expenses",
+        "tag": "otheroperatingexpenses",
+        "definition": "Other operating expenses, also known as overhead expenses, is the amount which generally does not depend on sales or production quantities. These include, for example, marketing expenses, rent and utilities, office expenses, operating leases, IT (software services) and other fixed costs.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Other Gains / (Losses), net",
+        "tag": "othergains",
+        "definition": "Other gains and losses are due to various events that require recognition of income or losses but are usually one off in nature.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Other Net Changes in Cash",
+        "tag": "othernetchangesincash",
+        "definition": "Represents all other adjustments to cash to reconcile change in cash.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Other Cost of Revenue",
+        "tag": "othercostofrevenue",
+        "definition": "Other cost of revenue is other costs or expenses incurred related to the sale of goods or service that are not considered part of the companies core operating activities.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Other Adjustment to Net Income / (Loss) Attributable to Common Shareholders)",
+        "tag": "otheradjustmentstonetincometocommon",
+        "definition": "Other adjustments to net income to common includes any other allocations of net income to the company to other stakeholders whose claims are higher than those of the common shareholder.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Other Adjustments to Consolidated Net Income / (Loss)",
+        "tag": "otheradjustmentstoconsolidatednetincome",
+        "definition": "Other adjustments to consolidated net income includes one off items below the Net income from continuing operations.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Net Income / (Loss) Discontinued Operations",
+        "tag": "netincomediscontinued",
+        "definition": "A discontinued operation occurs when a segment or certain product line in a company's business has been sold, disposed of or abandoned and is subsequently reported on the company's income statement as income separate from continued operations. Because income from discontinued operations is listed separately on the income statement, investors are less likely to be misled as to the source of a company's profit. This is especially useful when companies merge, since parsing out which assets are being divested or folded up gives a clearer picture of how a company will make money in the future.",
+        "statements": "Income Statement, Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Operating Cost of Revenue",
+        "tag": "operatingcostofrevenue",
+        "definition": "The cost of revenue is the total cost of manufacturing and delivering a product or service. Cost of revenue information is found in a company's income statement, and is designed to represent the direct costs associated with the goods and services the company provides. Cost of revenue is different from cost of goods sold (COGS) because it includes costs outside of production, such as distribution and marketing.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Net Income / (Loss) Continuing Operations",
+        "tag": "netincomecontinuing",
+        "definition": "Net income from continuing operations is a line item on the income statement that notes the after-tax earnings that a business has generated from its operational activities. Since one-time events and the results of discontinued operations are excluded, this measure is considered to be a prime indicator of the financial health of a firm s core activities. Continuing Operations refers to the tasks required to make a product or service and deliver it to a customer.",
+        "statements": "Income Statement, Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Operating Revenue",
+        "tag": "operatingrevenue",
+        "definition": "Operating revenue is revenue (sales) generated from a company's day-to-day business activities, which means revenue posted from selling the company s products and services. A retailer, for example, produces revenue through inventory sales, and a doctor derives revenue from consulting with patients. Operating revenue is important for a business to remain viable, because these sales are sustainable from one year to the next.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Non-Cash Adjustments to Reconcile Net Income",
+        "tag": "noncashadjustmentstonetincome",
+        "definition": "The first adjustments made to the net income balance involve non-cash transactions that have increased or decreased the amount of net income or loss reported by the entity during the financial reporting period. The most common non-cash transaction to be adjusted involves depreciation expense or amortization. Depreciation or amortization expense occurs when the value of an owned asset is reduced to reflect a write-down in the remaining useful life of that asset. Since no cash has been actually exchanged, the amount of depreciation or amortization expense must be added back to the amount of net income or loss reported by the entity.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Net Income / (Loss) Attributable to Noncontrolling Interest",
+        "tag": "netincometononcontrollinginterest",
+        "definition": "Net Income to noncontrolling interests include all income allocated to the non controlling interest holders of the company.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Net Cash From Operating Activities",
+        "tag": "netcashfromoperatingactivities",
+        "definition": "Cash flow from operating activities (CFO) is an accounting item indicating the money a company brings in from ongoing, regular business activities, such as manufacturing and selling goods or providing a service. Cash flow from operating activities does not include long-term capital or investment costs. It does include earnings before interest and taxes plus depreciation minus taxes.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Net Cash From Financing Activities",
+        "tag": "netcashfromfinancingactivities",
+        "definition": "A category in a company s cash flow statement that accounts for external activities that allow a firm to raise capital and repay investors, such as issuing cash dividends, adding or changing loans or issuing more stock. Cash flow from financing activities shows investors the company s financial strength. A company that frequently turns to new debt or equity for cash, for example, could have problems if the capital markets become less liquid.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Net Income / (Loss) Attributable to Common Shareholders",
+        "tag": "netincometocommon",
+        "definition": "Earnings available for common stockholders equals net income minus preferred dividends. Net income, or profit, equals total revenue minus total expenses. Revenue is the money you earn selling products and services. Expenses are the costs you incur in the same period, such as rent, payroll, interest and income taxes.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Net Cash From Discontinued Financing Activities",
+        "tag": "netcashfromdiscontinuedfinancingactivities",
+        "definition": "Cash flow from discontinued financing activities is an item on the cash flow statement that reports the aggregate change in financing activities by discontinued operations.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Net Cash From Discontinued Operating Activities",
+        "tag": "netcashfromdiscontinuedoperatingactivities",
+        "definition": "Net cash from discontinued operating activities reflects all cash flow from discontinued meet income and other non cash adjustments and changes in operating capital.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Net Change in Cash & Equivalents",
+        "tag": "netchangeincash",
+        "definition": "Cash and cash equivalents refer to the line item on the balance sheet that reports the value of a company's assets that are cash or can be converted into cash immediately. These include bank accounts, marketable securities, commercial paper, Treasury bills and short-term government bonds with a maturity date of three months or less. Marketable securities and money market holdings are considered cash equivalents because they are liquid and not subject to material fluctuations in value.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Net Cash From Investing Activities",
+        "tag": "netcashfrominvestingactivities",
+        "definition": "Cash flow from investing activities is an item on the cash flow statement that reports the aggregate change in a company's cash position resulting from any gains (or losses) from investments in the financial markets and operating subsidiaries and changes resulting from amounts spent on investments in capital assets such as plant and equipment.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Net Cash From Continuing Investing Activities",
+        "tag": "netcashfromcontinuinginvestingactivities",
+        "definition": "Cash flow from continuing investing activities is an item on the cash flow statement that reports the aggregate change in a company's cash position resulting from any gains (or losses) from investments in the financial markets and operating subsidiaries and changes resulting from amounts spent on investments in capital assets such as plant and equipment not including discontinued operations.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Net Cash From Discontinued Investing Activities",
+        "tag": "netcashfromdiscontinuedinvestingactivities",
+        "definition": "Cash flow from discontinued investing activities is an item on the cash flow statement that reports the aggregate change in investment activities by discontinued operations.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Net Cash From Continuing Operating Activities",
+        "tag": "netcashfromcontinuingoperatingactivities",
+        "definition": "Cash flow from operating activities (CFO) is an accounting item indicating the money a company brings in from ongoing, regular business activities, such as manufacturing and selling goods or providing a service. Cash flow from operating activities does not include long-term capital or investment costs. It does include earnings before interest and taxes plus depreciation minus taxes.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Marketing Expense",
+        "tag": "marketingexpense",
+        "definition": "Marketing expenses are related to the companies advertisement of products offered by the financial institution.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Net Cash From Continuing Financing Activities",
+        "tag": "netcashfromcontinuingfinancingactivities",
+        "definition": "Cash flow from continuing financing activities is an item on the cash flow statement that reports the aggregate change in a company's cash position resulting from any financing activity including the issuance and repurchase of equity, issuance and repayment of debt, payment of dividends and other financing activities.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Issuance of Debt",
+        "tag": "issuanceofdebt",
+        "definition": "A debt issue is a fixed corporate or government obligation, such as a bond or debenture. A debt issue is a financial obligation that allows the issuer to raise funds by promising to repay the lender at a certain point in the future and in accordance with the terms of the contract. Debt issues include notes, bonds, certificates, mortgages, leases or other agreements between the issuer (the borrower) and lender. Debt issues, such as bonds, are issued by corporations to raise money for certain projects or to expand into new markets; municipalities, states and U.S. and foreign governments issue debt to finance a variety of projects such as social programs or infrastructure plans.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Extraordinary Income / (Loss), net",
+        "tag": "extraordinaryincome",
+        "definition": "An extraordinary item consists of gains or losses included on a company's income statement from events, which are unusual and infrequent in nature. Extraordinary items are usually explained further in the notes to the financial statements, and they are the result of unforeseen and atypical events. Companies show an extraordinary item separately from their operating earnings, because it is typically recorded as a one-time charge or income, and it is not expected to recur in the future.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Income Tax Expense",
+        "tag": "incometaxexpense",
+        "definition": "A tax expense is a liability owing to federal, state/provincial and municipal governments. Tax expenses are calculated by multiplying the appropriate tax rate of an individual or business by their income before taxes, after factoring in such variables as non-deductible items, tax assets and tax liabilities.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Issuance of Preferred Equity",
+        "tag": "issuanceofpreferredequity",
+        "definition": "A preferred stock is a class of ownership in a corporation that has a higher claim on its assets and earnings than common stock. Preferred shares generally have a dividend that must be paid out before dividends to common shareholders, and the shares usually do not carry voting rights.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Issuance of Common Equity",
+        "tag": "issuanceofcommonequity",
+        "definition": "Issued shares are the authorized shares sold to and held by the shareholders of a company, regardless of whether they are insiders, institutional investors or the general public, as shown in the company s annual report. Issued shares include the stock a company sells publicly to generate capital and the stock given to insiders as part of their compensation packages. Unlike shares held as treasury stock, shares that have been retired are not included in this figure.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Exploration Expense",
+        "tag": "explorationexpense",
+        "definition": "Exploration expenses are direct expenses related to determining at size and value of a companies resource reserves.  Typically a resource based company must explore their property to discover where to focus mining efforts and help investors understand the scope of reserves held by the company.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Effect of Exchange Rate Changes",
+        "tag": "effectofexchangeratechanges",
+        "definition": "The price of a nation s currency in terms of another currency. An exchange rate thus has two components, the domestic currency and a foreign currency, and can be quoted either directly or indirectly. In a direct quotation, the price of a unit of foreign currency is expressed in terms of the domestic currency. In an indirect quotation, the price of a unit of domestic currency is expressed in terms of the foreign currency. An exchange rate that does not have the domestic currency as one of the two currency components is known as a cross currency, or cross rate.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Divestitures",
+        "tag": "divestitures",
+        "definition": "A divestiture is the partial or full disposal of a business unit through sale, exchange, closure or bankruptcy. A divestiture most commonly results from a management decision to cease operating a business unit because it is not part of a core competency. However, it may also occur if a business unit is deemed to be redundant after a merger or acquisition, if the disposal of a unit increases the resale value of the firm, or if a court requires the sale of a business unit to improve market competition.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Diluted Earnings per Share",
+        "tag": "dilutedeps",
+        "definition": "Diluted EPS is a performance metric used to gauge the quality of a company's earnings per share (EPS) if all convertible securities were exercised. Convertible securities are all outstanding convertible preferred shares, convertible debentures, stock options (primarily employee-based) and warrants.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD per Share",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Depreciation Expense",
+        "tag": "depreciationexpense",
+        "definition": "Depreciation is an accounting method of allocating the cost of a tangible asset over its useful life. Businesses depreciate long-term assets for both tax and accounting purposes. For tax purposes, businesses can deduct the cost of the tangible assets they purchase as business expenses; however, businesses must depreciate these assets in accordance with IRS rules about how and when the deduction may be taken.",
+        "statements": "Income Statement, Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Consolidated Net Income / (Loss)",
+        "tag": "netincome",
+        "definition": "Net income (NI) is a company's total earnings (or profit); net income is calculated by taking revenues and subtracting the costs of doing business such as depreciation, interest, taxes and other expenses. This number appears on a company's income statement and is an important measure of how profitable the company is over a period of time.",
+        "statements": "Income Statement, Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Depletion Expense",
+        "tag": "depletionexpense",
+        "definition": "Depletion is used to allocate the cost of extracting natural resources from the Earth and is the actual physical depletion of a natural resource by a company.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Changes in Operating Assets and Liabilities, net",
+        "tag": "increasedecreaseinoperatingcapital",
+        "definition": "Increase or decrease in operating capital measures the change in items from the balance sheet to adjust net income for changes in operating capital such as net working capital.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Cash Interest Paid",
+        "tag": "cashinterestpaid",
+        "definition": "The total amount of cash interest paid by the company for the period.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Cash Interest Received",
+        "tag": "cashinterestreceived",
+        "definition": "The total amount of cash interest received by the company for the period.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Basic Earnings per Share",
+        "tag": "basiceps",
+        "definition": "Basic earnings per share is the amount of a company's profit or loss for a reporting period that is available to the shares of its common stock that are outstanding during the reporting period. It is a useful measure of performance for companies with simplified capital structures.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD per Share",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Cash Dividends to Common per Share",
+        "tag": "cashdividendspershare",
+        "definition": "Dividend per share (DPS) is the sum of declared dividends issued by a company for every ordinary share outstanding. Dividend per share (DPS) is the total dividends paid out by a business, including interim dividends, divided by the number of outstanding ordinary shares issued. A company's DPS is usually derived using the dividend paid in the most recent quarter, which is also used to calculate the dividend yield.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD per Share",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Basic & Diluted Earnings per Share",
+        "tag": "basicdilutedeps",
+        "definition": "",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD per Share",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Amortization Expense",
+        "tag": "amortizationexpense",
+        "definition": "Amortization expense is the write-off of an intangible asset over its expected period of use, which reflects the consumption of the asset. This write-off results in the residual asset balance declining over time. The amount of this write-off appears in the income statement, usually within the \"depreciation and amortization\" line item.",
+        "statements": "Income Statement, Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Revenue Q/Q Growth",
+        "tag": "revenueqoqgrowth",
+        "definition": "Quarterly revenue growth is an increase of a company's sales when compared to a previous quarter's revenue performance. The current quarter's sales figure can be compared on a year-over-year basis or sequentially. This helps to give analysts, investors and participants an idea of how much a company's sales are increasing over time.",
+        "statements": "Calculations",
+        "type": "Growth",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Acquisitions",
+        "tag": "acquisitions",
+        "definition": "An acquisition is a corporate action in which a company buys most, if not all, of another firm's ownership stakes to assume control of it. An acquisition occurs when a buying company obtains more than 50% ownership in a target company. As part of the exchange, the acquiring company often purchases the target company's stock and other assets, which allows the acquiring company to make decisions regarding the newly acquired assets without the approval of the target company s shareholders. Acquisitions can be paid for in cash, in the acquiring company's stock or a combination of both.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Revenue Growth",
+        "tag": "revenuegrowth",
+        "definition": "Revenue growth illustrates sales increases/decreases over time. It is used to measure how fast a business is expanding. More valuable than a snapshot of revenue, revenue growth helps investors identify trends in order to gauge revenue growth over time.",
+        "statements": "Calculations",
+        "type": "Growth",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Return on Equity (Simple)",
+        "tag": "roe_simple",
+        "definition": "\n                      Return on equity (ROE_SIMPLE) is the amount of net income returned as a \r\n                                        percentage of total equity. Return on equity measures a corporation's profitability \r\n                                        by revealing how much profit a company generates with the money shareholders have \r\n                                        invested. The ROE is useful for comparing the profitability of a company to that \r\n                                        of other firms in the same industry.\n                    ",
+        "statements": "Calculations",
+        "type": "Effectiveness",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Return on Net Non-Operating Assets",
+        "tag": "rnnoa",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Effectiveness",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Return on Common Equity",
+        "tag": "roce",
+        "definition": "Return on common equity is a measure of how well a company uses its investment dollars to generate profits. It tells common stock investors how effectively their capital is being reinvested. A company with high return on equity (ROE) is more successful in generating cash internally. Investors are always looking for companies with high and growing returns on common equity. However, not all high ROE companies make good investments. The better benchmark is to compare a companys return on common equity with its industry average. The higher the ratio, the better the company.",
+        "statements": "Calculations",
+        "type": "Effectiveness",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "R&D to Revenue",
+        "tag": "rdextorevenue",
+        "definition": "The Research & Development (R&D) Expense to Revenue ratio measures the percentage of sales that is allocated to R&D expenditures. It is not as effective when looking at companies in different industries because different industries place different values on R&D. Technology companies and pharmaceutical companies are more likely to have high R&D ratios.",
+        "statements": "Calculations",
+        "type": "Profitability",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Return on Invested Capital",
+        "tag": "roic",
+        "definition": "ROIC is used to assess a company's efficiency at allocating the capital under its control to profitable investments. Return on invested capital gives a sense of how well a company is using its money to generate returns. Comparing a company's return on capital (ROIC) with its weighted average cost of capital (WACC) reveals whether invested capital is being used effectively.",
+        "statements": "Calculations",
+        "type": "Effectiveness",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Profit (Net Income) Margin",
+        "tag": "profitmargin",
+        "definition": "Profit margin is part of a category of profitability ratios and it measures how much out of every dollar of sales a company actually keeps in earnings.",
+        "statements": "Calculations",
+        "type": "Profitability",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Return on Assets",
+        "tag": "roa",
+        "definition": "Return on assets (ROA) is an indicator of how profitable a company is relative to its total assets. ROA gives an idea as to how efficient management is at using its assets to generate earnings. ROA tells you what earnings were generated from invested capital (assets). ROA for public companies can vary substantially and will be highly dependent on the industry. This is why when using ROA as a comparative measure, it is best to compare it against a company's previous ROA numbers or the ROA of a similar company.",
+        "statements": "Calculations",
+        "type": "Effectiveness",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Return on Equity",
+        "tag": "roe",
+        "definition": "Return on equity (ROE) is the amount of net income returned as a percentage of shareholders equity. Return on equity measures a corporation's profitability by revealing how much profit a company generates with the money shareholders have invested. The ROE is useful for comparing the profitability of a company to that of other firms in the same industry.",
+        "statements": "Calculations",
+        "type": "Effectiveness",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Price to Revenue",
+        "tag": "pricetorevenue",
+        "definition": "A valuation ratio that compares a companys stock price to its revenues. The price-to-revenue ratio is an indicator of the value placed on each dollar of a companys revenues. It can be calculated either by dividing the companys market capitalization by its total sales over a 12-month period, or on a per-share basis by dividing the stock price by sales per share for a 12-month period. Like all ratios, the price-to-sales ratio is most relevant when used to compare companies in the same sector. A low ratio may indicate possible undervaluation, while a ratio that is significantly above the average may suggest overvaluation.",
+        "statements": "Calculations",
+        "type": "Valuation",
+        "units": "Multiple",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Quick Ratio",
+        "tag": "quickratio",
+        "definition": "The quick ratio is an indicator of a companys short-term liquidity. The quick ratio measures a companys ability to meet its short-term obligations with its most liquid assets. The quick ratio is more conservative than the current ratio because it excludes inventories from current assets. The ratio derives its name presumably from the fact that assets such as cash and marketable securities are quick sources of cash.",
+        "statements": "Calculations",
+        "type": "Liquidity",
+        "units": "Float",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Unearned Premiums Liability",
+        "tag": "unearnedpremiumscredit",
+        "definition": "Unearned premium is the premium corresponding to the time period remaining on an insurance policy. Unearned premiums are proportionate to the unexpired portion of the insurance and appear as a liability on the insurer's balance sheet, since they would be paid back upon cancellation of the policy.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Price to Tangible Book Value",
+        "tag": "pricetotangiblebook",
+        "definition": "The price to tangible book value (PTBV) is a valuation ratio expressing the price of a security compared to its hard, or tangible, book value as reported in the company's balance sheet. A stock's tangible book value per share represents the amount of money an investor would receive for each share if a company were to cease operations and liquidate all of its assets at the value recorded on the company's accounting books.",
+        "statements": "Calculations",
+        "type": "Valuation",
+        "units": "Multiple",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Treasury Stock",
+        "tag": "treasurystock",
+        "definition": "Treasury stock (treasury shares) are the portion of shares that a company keeps in its own treasury. Treasury stock may have come from a repurchase or buyback from shareholders, or it may have never been issued to the public in the first place. These shares don't pay dividends, have no voting rights and should not be included in shares outstanding calculations.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Total Noncurrent Liabilities",
+        "tag": "totalnoncurrentliabilities",
+        "definition": "The total noncurrent liabilities is the sum of all liabilities of the company due in greater than 1 year.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Unearned Premiums Asset",
+        "tag": "unearnedpremiumsdebit",
+        "definition": "Unearned premium is the premium corresponding to the time period remaining on an insurance policy. Unearned premiums are proportionate to the unexpired portion of the insurance and appear as a liability on the insurer's balance sheet, since they would be paid back upon cancellation of the policy.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Total Equity & Noncontrolling Interests",
+        "tag": "totalequityandnoncontrollinginterests",
+        "definition": "Total equity and non controlling interests are the sum of preferred stock, common equity and non controlling interest.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Trading Account Securities",
+        "tag": "tradingaccountsecurities",
+        "definition": "Trading account assets refer to a separate account managed by banks that buy (underwriting) U.S. government securities and other securities for their own trading account or for resale at a profit to other banks and to the public, rather than for investment in the bank's own investment portfolio. Trading assets are segregated from the investment portfolio. They are recorded separately when acquired until they are disposed of or sold, and are then recorded at the price in effect when these securities are purchased or sold. Trading assets held for other banks are marked to market (adjusted to current market value) while held by a bank.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Total Current Assets",
+        "tag": "totalcurrentassets",
+        "definition": "Current assets are balance sheet accounts that represent the value of all assets that can reasonably expect to be converted into cash within one year. Current assets include cash and cash equivalents, accounts receivable, inventory, marketable securities, prepaid expenses and other liquid assets that can be readily converted to cash.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Total Preferred & Common Equity",
+        "tag": "totalequity",
+        "definition": "Total Equity is the sum of common equity plus preferred equity.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Total Common Equity",
+        "tag": "totalcommonequity",
+        "definition": "Common Equity is the sum of all common equity line items.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Preferred Equity to Total Capital",
+        "tag": "preferredtocap",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Capital Structure",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Operating Margin",
+        "tag": "operatingmargin",
+        "definition": "Operating margin is a margin ratio used to measure a company's pricing strategy and operating efficiency. Operating margin is a measurement of what proportion of a company's revenue is left over after paying for variable costs of production such as wages, raw materials, etc.",
+        "statements": "Calculations",
+        "type": "Profitability",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Total Liabilities",
+        "tag": "totalliabilities",
+        "definition": "Total liabilities are the total amounts due to all parties to the company including vendors, employees, bondholders, lenders and more.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Price to Earnings",
+        "tag": "pricetoearnings",
+        "definition": "The price-earnings ratio (P/E Ratio) is the ratio for valuing a company that measures its current share price relative to its per-share earnings. The price-earnings ratio indicates the dollar amount an investor can expect to invest in a company in order to receive one dollar of that companys earnings. This is why the P/E is sometimes referred to as the multiple because it shows how much investors are willing to pay per dollar of earnings.",
+        "statements": "Calculations",
+        "type": "Valuation",
+        "units": "Multiple",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Total Current Liabilities",
+        "tag": "totalcurrentliabilities",
+        "definition": "The total current liabilities is the sum of all liabilities of the company due in less than 1 year.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Pre Tax Income Margin",
+        "tag": "pretaxincomemargin",
+        "definition": "Pretax profit margin is a company's earnings before tax as a percentage of total sales or revenues. The higher the pretax profit margin, the more profitable the company. The trend of the pretax profit margin is as important as the figure itself, since it provides an indication of which way the company's profitability is headed.",
+        "statements": "Calculations",
+        "type": "Profitability",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Operating Expenses to Revenue",
+        "tag": "opextorevenue",
+        "definition": "Operating Expenses to Revenue is a measure of what it costs to operate a piece of property compared to the income that the property brings in. The measure is very common in real estate analysis, whereby analysts are measuring the costs to operate a piece of property versus the income it generates.An investor should look for red flags such as higher maintenance expenses, operating income or utilities that may deter him from purchasing a specific property.",
+        "statements": "Calculations",
+        "type": "Profitability",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Operating Cash Flow to Interest Expense",
+        "tag": "ocftointerestex",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Coverage",
+        "units": "Float",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Price to Book Value",
+        "tag": "pricetobook",
+        "definition": "The price-to-book ratio (P/B Ratio) is a ratio used to compare a stock's market value to its book value. A lower P/B ratio could mean that the stock is undervalued. However, it could also mean that something is fundamentally wrong with the company. As with most ratios, be aware that this varies by industry. This ratio also gives some idea of whether you're paying too much for what would be left if the company went bankrupt immediately.",
+        "statements": "Calculations",
+        "type": "Valuation",
+        "units": "Multiple",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Operating Return on Assets",
+        "tag": "oroa",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Effectiveness",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Operating Cash Flow to CapEx",
+        "tag": "ocftocapex",
+        "definition": "Operating Cash flow to capital expenditures is a ratio that measures a company's ability to acquire long-term assets using free cash flow. The Operating cash flow to capital expenditures ratio will often fluctuate as businesses go through cycles of large and small capital expenditures. A higher ratio is indicative of a company with sufficient capital to fund operations.",
+        "statements": "Calculations",
+        "type": "Effectiveness",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Operating Cash Flow Growth",
+        "tag": "ocfgrowth",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Growth",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Normalized Net Operating Profit After Tax",
+        "tag": "normalizednopat",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Operating Cash Flow Less CapEx to Interest Expense",
+        "tag": "ocflesscapextointerestex",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Coverage",
+        "units": "Float",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Normalized NOPAT Margin",
+        "tag": "normalizednopatmargin",
+        "definition": "Normalized Net Operating Profit after Tax Margin are adjusted to remove the effects of seasonality, revenue and expenses that are unusual or one-time influences.",
+        "statements": "Calculations",
+        "type": "Profitability",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Operating Cash Flow Q/Q Growth",
+        "tag": "ocfqoqgrowth",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Growth",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "NOPAT Less CapEx to Interest Expense",
+        "tag": "nopatlesscapextointex",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Coverage",
+        "units": "Float",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "NOPAT Growth",
+        "tag": "nopatgrowth",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Growth",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "NOPAT to Interest Expense",
+        "tag": "nopattointerestex",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Coverage",
+        "units": "Float",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Noncontrolling Interest Sharing Ratio",
+        "tag": "noncontrollinginterestsharingratio",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Effectiveness",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "NOPAT Q/Q Growth",
+        "tag": "nopatqoqgrowth",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Growth",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Net Operating Profit After Tax",
+        "tag": "nopat",
+        "definition": "Net operating profit after tax (NOPAT) is a company's potential cash earnings if its capitalization were unleveraged  that is, if it had no debt. NOPAT is a more accurate look at operating efficiency for leveraged companies, and it does not include the tax savings many companies get because of existing debt.",
+        "statements": "Calculations",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "NOPAT Margin",
+        "tag": "nopatmargin",
+        "definition": "This profitability ratio shows a companies ability to generate after-tax operating profit for every dollar of sales made.",
+        "statements": "Calculations",
+        "type": "Profitability",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Noncontrolling Interests to Total Capital",
+        "tag": "noncontrolinttocap",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Capital Structure",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Total Assets",
+        "tag": "totalassets",
+        "definition": "Total assets are the sum of all current and noncurrent assets that a company owns. They are reported on the company balance sheet. The total asset figure is based on the purchase price of the listed assets, and not the fair market value.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Net Non-Operating Obligations",
+        "tag": "netnonopobligations",
+        "definition": "A non-operating expense is an expense incurred by a business that's unrelated to its core operations. The most common types of non-operating expenses relate to depreciation, amortization, interest charges or other costs of borrowing.",
+        "statements": "Calculations",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Net Working Capital to Revenue",
+        "tag": "nwctorev",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Liquidity",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Net Working Capital",
+        "tag": "nwc",
+        "definition": "Working capital, also known as net working capital, is the difference between a company\u2019s current assets, like cash, accounts receivable (customers\u2019 unpaid bills) and inventories of raw materials and finished goods, and its current liabilities, like accounts payable.",
+        "statements": "Calculations",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Separate Account Business Assets",
+        "tag": "separateaccountbusinessassets",
+        "definition": "The separate account business assets are segregated assets that are held by the bank for clients due to the requirements of the policy.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Retained Earnings",
+        "tag": "retainedearnings",
+        "definition": "Retained earnings refer to the percentage of net earnings not paid out as dividends, but retained by the company to be reinvested in its core business, or to pay debt. It is recorded under shareholders' equity on the balance sheet. The formula calculates retained earnings by adding net income to, or subtracting any net losses from, beginning retained earnings, and subtracting any dividends paid to shareholders.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Short-Term Debt",
+        "tag": "shorttermdebt",
+        "definition": "Short-term debt is an account shown in the current liabilities portion of a company's balance sheet. This account is made up of any debt incurred by a company that is due within one year. The debt in this liabilities account is usually made up of short-term bank loans taken out by a company, among other types.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Short-Term Investments",
+        "tag": "shortterminvestments",
+        "definition": "Short-term investments are part of the account in the current assets section of a company's balance sheet. This account contains any investments that a company has made that is expected to be converted into cash within one year. For the most part, these accounts contain stocks and bonds that can be liquidated fairly quickly.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Time Deposits Placed and Other Short-Term Investments",
+        "tag": "timedepositsplaced",
+        "definition": "A time deposit is an interest-bearing bank deposit account that has a specified date of maturity, such as a savings account or certificate of deposit (CD). The funds in these accounts must be held for a fixed term and include the understanding that the depositor can make a withdrawal only by giving notice.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Redeemable Noncontrolling Interest",
+        "tag": "redeemablenoncontrollinginterest",
+        "definition": "A redeemable non-controlling interest (NCI) is an ownership stake in a corporation, with the investors owning a minority interest and having less influence over how the company is managed. The majority of investor positions are deemed to be NCI, because the ownership stake is so insignificant relative to the total number of outstanding shares. For smaller companies, any ownership position that holds less than 50% of the outstanding voting shares is deemed to be an NCI.  Redeemable Temporary NCI reflects amounts that will be redeemed into another equity type within one year.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Prepaid Expenses",
+        "tag": "prepaidexpenses",
+        "definition": "A prepaid expense is a type of asset that arises on a balance sheet as a result of business making payments for goods and services to be received in the near future. While prepaid expenses are initially recorded as assets, their value is expensed over time as the benefit is received onto the income statement, because unlike conventional expenses, the business will receive something of value in the near future.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Premises and Equipment, Net",
+        "tag": "netpremisesandequipment",
+        "definition": "Net premise and equipment are the productive real assets of the bank or financial institution such as offices and building, equipment an furniture.  In addition, it also includes all productive real estate held by REITs and assets of financial institutions.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Separate Account Business Liabilities",
+        "tag": "separateaccountbusinessliabilities",
+        "definition": "The separate account business liabilities are amounts due to customers whose assets are segregated from the firm their assets that are held by the bank for clients due to the requirements of the policy.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Restricted Cash",
+        "tag": "restrictedcash",
+        "definition": "Restricted cash, in contrast to cash freely available for a company to spend or invest, refers to money that is held for a specific purpose and therefore not available to the company for immediate or general business use. Restricted cash appears as a separate item from the cash and equivalents listing on a company's balance sheet or other financial statement, and the reason for the cash being restricted is usually disclosed in the accompanying notes to financial statements. Cash is restricted for a number of possible reasons, such as equipment purchases, other capital investments or loan repayment.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Participating Policy Holder Equity",
+        "tag": "participatingpolicyholderequity",
+        "definition": "The participating policy holder equity is the total fair value of amounts earned by customers due to various insurance and investments where the customer owns the assets but are still held by the bank and could be due to customers depending on the financial arrangement.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Policy Holder Funds",
+        "tag": "policyholderfunds",
+        "definition": "Policyholders' funds represent customer deposits plus interest credited at contract rates. We control interest rate risk by investing in quality assets which have an aggregate duration that closely matches the expected duration of the liabilities.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Plant, Property & Equipment, gross",
+        "tag": "grossppe",
+        "definition": "Gross Property, plant and equipment (PP&E) is the total purchase price paid by the  company for assets that are vital to business operations but cannot be easily liquidated, and depending on the nature of a company's business, the total value of PP&E can range from very low to extremely high compared to total assets.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Other Taxes Payable",
+        "tag": "othertaxespayable",
+        "definition": "Other taxes payable are any non income tax related tax amount that is due within the year.  this may include sales tax, excise tax and others.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Preferred Stock",
+        "tag": "totalpreferredequity",
+        "definition": "A preferred stock is a class of ownership in a corporation that has a higher claim on its assets and earnings than common stock. Preferred shares generally have a dividend that must be paid out before dividends to common shareholders, and the shares usually do not carry voting rights.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Plant, Property, & Equipment, net",
+        "tag": "netppe",
+        "definition": "Property, plant and equipment (PP&E) is a company asset that is vital to business operations but cannot be easily liquidated, and depending on the nature of a company's business.  The net PP&E accounts for the total accumulated depreciation to reflect a value of the assets to decline over their useful life.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Other Noncurrent Operating Assets",
+        "tag": "othernoncurrentassets",
+        "definition": "Other non current assets are all non current assets of the business that do not fit into another category, but are operating in nature.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Other Short-Term Payables",
+        "tag": "othershorttermpayables",
+        "definition": "Other short term payables are liabilities of the bank due to other parties of the firm.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Other Noncurrent Nonoperating Liabilities",
+        "tag": "othernoncurrentnonoperatingliabilities",
+        "definition": "Other noncurrent nonoperating liabilities are all noncurrent liabilities of the business that do not fit into another category and are nonoperating in nature",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Other Current Nonoperating Liabilities",
+        "tag": "othercurrentnonoperatingliabilities",
+        "definition": "Other current nonoperating liabilities are all current liabilities of the business that do not fit into another category and are nonoperating in nature",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Other Noncurrent Operating Liabilities",
+        "tag": "othernoncurrentliabilities",
+        "definition": "Other noncurrent liabilities are all noncurrent liabilities of the business that do not fit into another category, but are operating in nature.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Other Equity Adjustments",
+        "tag": "otherequity",
+        "definition": "Other equity represents all other equity claims and adjustments such as warrants, stock options and more.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Net Income Q/Q Growth",
+        "tag": "netincomeqoqgrowth",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Growth",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Net Non-Operating Expense Percent",
+        "tag": "nnep",
+        "definition": "A non-operating expense is an expense incurred by a business that's unrelated to its core operations. The most common types of non-operating expenses relate to depreciation, amortization, interest charges or other costs of borrowing. Accountants sometimes remove non-operating expenses or non-operating revenues in order to examine the performance of the business, ignoring effects of financing or other irrelevant issues.",
+        "statements": "Calculations",
+        "type": "Effectiveness",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Net Debt to NOPAT",
+        "tag": "netdebttonopat",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Solvency",
+        "units": "Float",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Net Debt",
+        "tag": "netdebt",
+        "definition": "Net debt shows a business's overall financial situation by subtracting the total value of a company's liabilities and debts from the total value of its cash, cash equivalents and other liquid assets, a process called netting. All the information necessary to determine a company's net debt can be found on its balance sheet.",
+        "statements": "Calculations",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Long-Term Debt to Total Capital",
+        "tag": "ltdebttocap",
+        "definition": "The long-term debt to capitalization ratio is a ratio showing the financial leverage of a firm. A variation of the traditional debt-to-equity ratio, this value computes the proportion of a company's long-term debt compared to its available capital. By using this ratio, investors can identify the amount of leverage utilized by a specific company and compare it to others to help analyze the company's risk exposure as generally, companies that finance a greater portion of their capital via debt are considered riskier than those with lower leverage ratios.",
+        "statements": "Calculations",
+        "type": "Capital Structure",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Net Income Growth",
+        "tag": "netincomegrowth",
+        "definition": "This figure represents the annualized rate of net-income growth over the trailing one-year period for the stocks held by a fund.Net-income growth gives a good picture of the rate at which companies have grown their profits. All things being equal, stocks with higher net-income growth rates are generally more desirable than those with slower net-income growth rates.",
+        "statements": "Calculations",
+        "type": "Growth",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Net Debt to EBITDA",
+        "tag": "netdebttoebitda",
+        "definition": "The net debt to earnings before interest depreciation and amortization (EBITDA) ratio is a measurement of leverage. The net debt to EBITDA ratio is a debt ratio that shows how many years it would take for a company to pay back its debt if net debt and EBITDA are held constant. If a company has more cash than debt, the ratio can be negative.",
+        "statements": "Calculations",
+        "type": "Solvency",
+        "units": "Float",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Net Non-Operating Expense",
+        "tag": "netnonopex",
+        "definition": "A non-operating expense is an expense incurred by a business that's unrelated to its core operations. The most common types of non-operating expenses relate to depreciation, amortization, interest charges or other costs of borrowing.",
+        "statements": "Calculations",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Long-Term Debt to Equity",
+        "tag": "ltdebttoequity",
+        "definition": "The ratio is calculated by taking the company's long-term debt and dividing it by the book value of common equity. The greater a company's leverage, the higher the ratio. Generally, companies with higher ratios are thought to be more risky.",
+        "statements": "Calculations",
+        "type": "Leverage",
+        "units": "Float",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Market Capitalization",
+        "tag": "marketcap",
+        "definition": "Market capitalization refers the total dollar market value of a company's outstanding shares. The investment community uses this figure to determine a company's size, as opposed to using sales or total asset figures.",
+        "statements": "Calculations",
+        "type": "Valuation",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Long-Term Debt to EBITDA",
+        "tag": "ltdebttoebitda",
+        "definition": "A high ratio of Long-Term debt to EBITDA reveals a company thats deep in debt. It will have a lower credit rating and be forced to offer higher yields on bonds. Generally, a ratio of 4 or higher is considered too high, though the benchmarks of specific industries should be weighed, as well. Most companies have a ratio higher than 1 (equal amounts debt and EBITDA). Some have higher EBITDA than debt, resulting in a ratio thats less than 1. The Long-Term debt to EBITDA ratio does not include the risks of excess cash or capital expenditures on a companys finances, so it should be used with caution when evaluating a company.",
+        "statements": "Calculations",
+        "type": "Solvency",
+        "units": "Float",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Long-Term Debt to NOPAT",
+        "tag": "ltdebttonopat",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Solvency",
+        "units": "Float",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Leverage Ratio",
+        "tag": "leverageratio",
+        "definition": "Companies rely on a mixture of owners' equity and debt to finance their operations. A leverage ratio is any one of several financial measurements that look at how much capital comes in the form of debt (loans), or assesses the ability of a company to meet financial obligations.",
+        "statements": "Calculations",
+        "type": "Leverage",
+        "units": "Float",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Invested Capital",
+        "tag": "investedcapital",
+        "definition": "Invested capital is the total amount of money raised by a company by issuing securities to shareholders and bondholders, and invested capital is calculated by adding the total debt and capital lease obligations to the amount of equity issued to investors.",
+        "statements": "Calculations",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Invested Capital Growth",
+        "tag": "investedcapitalgrowth",
+        "definition": "Invested Capital growth is the increase in value of an asset or investment over time. Capital growth is measured on the basis of the current value of the asset or investment, in relation to the amount originally invested in it. Capital growth is one of the most fundamental investment objectives for investors. It generally connotes a higher appetite for risk as opposed to an income objective, which may denote lower risk tolerance.",
+        "statements": "Calculations",
+        "type": "Growth",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Interest Burden Percent",
+        "tag": "interestburdenpct",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Profitability",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Gross Margin",
+        "tag": "grossmargin",
+        "definition": "The gross margin represents the percent of total sales revenue that the company retains after incurring the direct costs associated with producing the goods and services it sells. The higher the percentage, the more the company retains on each dollar of sales, to service its other costs and debt obligations.",
+        "statements": "Calculations",
+        "type": "Profitability",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Free Cash Flow to Firm to Interest Expense",
+        "tag": "fcfftointerestex",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Coverage",
+        "units": "Float",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Invested Capital Q/Q Growth",
+        "tag": "investedcapitalqoqgrowth",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Growth",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Increase / (Decrease) in Invested Capital",
+        "tag": "investedcapitalincreasedecrease",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Free Cash Flow Firm Q/Q Growth",
+        "tag": "fcffqoqgrowth",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Growth",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Free Cash Flow to Firm",
+        "tag": "freecashflow",
+        "definition": "Free cash flow for the firm (FCFF) is a measure of financial performance that expresses the net amount of cash that is generated for a firm after expenses, taxes and changes in net working capital and investments are deducted. FCFF is essentially a measurement of a company's profitability after all expenses and reinvestments. It's one of the many benchmarks used to compare and analyze financial health.",
+        "statements": "Calculations",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Free Cash Flow Firm Growth",
+        "tag": "fcffgrowth",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Growth",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Volume",
+        "tag": "volume",
+        "definition": "",
+        "statements": "Current",
+        "type": "Prices",
+        "units": "Shares",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Other Current Assets",
+        "tag": "othercurrentassets",
+        "definition": "Other current assets are all current assets of the business that do not fit into another category, but are operating in nature.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Note & Lease Receivable",
+        "tag": "notereceivable",
+        "definition": "Receivables is an asset designation applicable to all debts, unsettled transactions or other monetary obligations owed to a company by its debtors or customers. Receivables are recorded by a company's accountants and reported on the balance sheet, and they include all debts owed to the company, even if the debts are not currently due. Long-term receivables, which do not come due for a significant length of time, are recorded as long-term assets on the balance sheet; most short-term receivables are considered part of a company's current assets.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Non-Interest Bearing Deposits",
+        "tag": "noninterestbearingdeposits",
+        "definition": "The term \"noninterest-bearing transaction account\" includes a traditional checking account or demand deposit account on which the insured depository institution pays no interest.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Other Current Liabilities",
+        "tag": "othercurrentliabilities",
+        "definition": "Other current liabilities are all current liabilities of the business that do not fit into another category, but are operating in nature.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Other Assets",
+        "tag": "otherassets",
+        "definition": "Other current assets (OCA) is a category of a firm's assets that does not include cash, securities, receivables, inventory and prepaid assets, and can be convertible into cash within one business cycle, which is usually one year.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Noncurrent Deferred Revenue",
+        "tag": "noncurrentdeferredrevenue",
+        "definition": "Deferred revenue, or unearned revenue, refers to advance payments for products or services that are to be delivered in the future. The recipient of such prepayment records unearned revenue as a liability on a balance sheet, because it refers to revenue that has not yet been earned, but represents products or services that are owed to a customer. As the product or service is delivered over time, it is recognized as revenue on the income statement.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Noncurrent Note & Lease Receivables",
+        "tag": "noncurrentnotereceivables",
+        "definition": "Receivables is an asset designation applicable to all debts, unsettled transactions or other monetary obligations owed to a company by its debtors or customers. Receivables are recorded by a company's accountants and reported on the balance sheet, and they include all debts owed to the company, even if the debts are not currently due. Long-term receivables, which do not come due for a significant length of time, are recorded as long-term assets on the balance sheet; most short-term receivables are considered part of a company's current assets.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Noncurrent Deferred & Refundable Income Taxes",
+        "tag": "noncurrentdeferredtaxassets",
+        "definition": "Tax refunds are a return of excess amounts of income tax that a taxpayer has paid to the state or federal government throughout the past year.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Noncontrolling Interest",
+        "tag": "noncontrollinginterests",
+        "definition": "A non-controlling interest (NCI) is an ownership stake in a corporation, with the investors owning a minority interest and having less influence over how the company is managed. The majority of investor positions are deemed to be NCI, because the ownership stake is so insignificant relative to the total number of outstanding shares. For smaller companies, any ownership position that holds less than 50% of the outstanding voting shares is deemed to be an NCI.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Long-Term Debt",
+        "tag": "longtermdebt",
+        "definition": "Long-term debt consists of loans and financial obligations lasting over one year. Long-term debt for a company would include any financing or leasing obligations that are to come due in a greater than 12-month period. Long-term debt also applies to governments: nations can also have long-term debt.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Noncurrent Employee Benefit Liabilities",
+        "tag": "noncurrentemployeebenefitliabilities",
+        "definition": "The noncurrent employee benefits liability is the amount to be paid to current or former employees in greater than one year for benefits the employees have earned in prior periods.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Noncurrent Deferred & Payable Income Tax Liabilities",
+        "tag": "noncurrentdeferredtaxliabilities",
+        "definition": "Noncurrent Income tax payable is a type of account in the noncurrent liabilities section of a company's balance sheet comprised of taxes that must be paid to the government later than one year. Income tax payable is calculated according to the prevailing tax law in the company's home country. The taxes are calculated on the company's net income according to its corporate tax rate; if a company is due to receive a tax benefit from its revenue agency, the amount of income tax payable will decrease.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Loans and Leases, Net of Allowance",
+        "tag": "netloansandleases",
+        "definition": "Net loans and leases is the net of productive loans and leases and the expected loss the bank expects to realize on their profiling",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Long-Term Investments",
+        "tag": "longterminvestments",
+        "definition": "A long-term investment is an account on the asset side of a company's balance sheet that represents the company's investments, including stocks, bonds, real estate and cash, that it intends to hold for more than a year. The long-term investment account differs largely from the short-term investment account in that the short-term investments will most likely be sold, whereas the long-term investments may never be sold.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Loans Held for Sale",
+        "tag": "loansheldforsale",
+        "definition": "Loans originated with the intent of selling in the secondary market are classified as held-for-sale. Loans held-for-sale are carried at the lower of aggregate cost, net of deferred fees, deferred origination costs and effects of hedge accounting, or fair value.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Loans and Leases",
+        "tag": "loansandleases",
+        "definition": "Loans and leases are productive assets to the bank or financial institution in that they generate interest income for the bank and are held by the bank at fair value.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Mortgage Servicing Rights",
+        "tag": "mortgageservicingrights",
+        "definition": "Mortgage servicing rights (MSR) refer to a contractual agreement where the right, or rights, to service an existing mortgage are sold by the original lender to another party who specializes in the various functions of servicing mortgages.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Inventories, net",
+        "tag": "netinventory",
+        "definition": "Inventory is the raw materials, work-in-process products and finished goods that are considered to be the portion of a business's assets that are ready or will be ready for sale. Inventory represents one of the most important assets of a business because the turnover of inventory represents one of the primary sources of revenue generation and subsequent earnings for the company's shareholders.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Intangible Assets",
+        "tag": "intangibleassets",
+        "definition": "An intangible asset is an asset that is not physical in nature. Corporate intellectual property, including items such as patents, trademarks, copyrights and business methodologies, are intangible assets, as are goodwill and brand recognition.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Future Policy Benefits",
+        "tag": "futurepolicybenefits",
+        "definition": "Future policy benefits are the discounted sum of all future benefits paid out to customers who have bought insurance from the financial institution such as life insurance or other liability insurance where the firm is expected to pay out benefits to it's customers.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "EPS Q/Q Growth",
+        "tag": "epsqoqgrowth",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Growth",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Interest Bearing Deposits at Other Banks",
+        "tag": "interestbearingdepositsatotherbanks",
+        "definition": "The interest bearing deposits at other banks include liquid amounts held at financial institutions where they generate interest income for the bank.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Interest Bearing Deposits",
+        "tag": "interestbearingdeposits",
+        "definition": "a deposit of money with a financial institution that pays interest on the deposit",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Goodwill",
+        "tag": "goodwill",
+        "definition": "Goodwill is an intangible asset that arises as a result of the acquisition of one company by another for a premium value. The value of a company s brand name, solid customer base, good customer relations, good employee relations and any patents or proprietary technology represent goodwill. Goodwill is considered an intangible asset because it is not a physical asset like buildings or equipment. The goodwill account can be found in the assets portion of a company's balance sheet.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "EPS Growth",
+        "tag": "epsgrowth",
+        "definition": "Earnings-per-share growth gives a good picture of the rate at which a company has grown its profitability per unit of equity. This figure represents the annualized rate of net-income-per-share growth over the trailing one-year period for the stocks held by a fund.",
+        "statements": "Calculations",
+        "type": "Growth",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Financial Leverage",
+        "tag": "finleverage",
+        "definition": "Financial leverage can be defined as the degree to which a company uses fixed-income securities, such as debt and preferred equity. With a high degree of financial leverage come high interest payments. As a result, the bottom-line earnings per share is negatively affected by interest payments. As interest payments increase as a result of increased financial leverage, EPS is driven lower.",
+        "statements": "Calculations",
+        "type": "Leverage",
+        "units": "Float",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Enterprise Value to Operating Cash Flow",
+        "tag": "evtoocf",
+        "definition": "Enterprise value to Operating cash flow is the ratio of the entire economic value of a company to the cash it produces. This metric calculates the number of years it would take to buy the entire business if it was able to use all the company's operating cash flow to buy all the outstanding stock and pay off all the outstanding debt. In other words, how long does it take the company to pay for itself?",
+        "statements": "Calculations",
+        "type": "Valuation",
+        "units": "Multiple",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Enterprise Value to Revenue",
+        "tag": "evtorevenue",
+        "definition": "The enterprise-value-to-revenue is a measure of the value of a stock that compares a company's enterprise value to its revenue. EV/Rev is one of several fundamental indicators that investors use to determine whether a stock is priced well. The EV/Rev multiple is also often used to determine a company's valuation in the case of a potential acquisition.",
+        "statements": "Calculations",
+        "type": "Valuation",
+        "units": "Multiple",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Enterprise Value to EBITDA",
+        "tag": "evtoebitda",
+        "definition": "This popular metric is widely used as a valuation tool, allowing investors to compare the value of a company, debt included, to the companys cash earnings less noncash expenses. It is ideal for analysts and potential investors looking to compare companies within the same industry. Typically, EV/EBITDA values below 10 are seen as healthy, but comparison of relative values among firms operating in the same industry is a good way for investors to determine companies with the healthiest EV/EBITDA within a specific sector.",
+        "statements": "Calculations",
+        "type": "Valuation",
+        "units": "Multiple",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Enterprise Value to NOPAT",
+        "tag": "evtonopat",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Valuation",
+        "units": "Multiple",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Enterprise Value to Free Cash Flow",
+        "tag": "evtofcff",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Valuation",
+        "units": "Multiple",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Effective Tax Rate",
+        "tag": "efftaxrate",
+        "definition": "The effective tax rate is the average rate at which a corporation is taxed. The effective tax rate for a corporation is the average rate at which its pre-tax profits are taxed.",
+        "statements": "Calculations",
+        "type": "Profitability",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Enterprise Value to Invested Capital",
+        "tag": "evtoinvestedcapital",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Valuation",
+        "units": "Multiple",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "EBIT to Interest Expense",
+        "tag": "ebittointerestex",
+        "definition": "EBIT to Interest Expense is a measurement of how much a company is earning (EBIT) over its interest payments or how easily a company can pay interest on outstanding debt. A ratio of three means that a company is making three times its interest payment expense.",
+        "statements": "Calculations",
+        "type": "Coverage",
+        "units": "Float",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "EBIT Q/Q Growth",
+        "tag": "ebitqoqgrowth",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Growth",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Enterprise Value to EBIT",
+        "tag": "evtoebit",
+        "definition": "EV/EBIT is often used by analysts to quickly look at a company's valuation multiples. All things being equal, the lower this ratio is, the better.",
+        "statements": "Calculations",
+        "type": "Valuation",
+        "units": "Multiple",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Enterprise Value",
+        "tag": "enterprisevalue",
+        "definition": "Enterprise Value, or EV for short, is a measure of a company's total value, often used as a more comprehensive alternative to equity market capitalization. The market capitalization of a company is simply its share price multiplied by the number of shares a company has outstanding.",
+        "statements": "Calculations",
+        "type": "Valuation",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "EBITDA Q/Q Growth",
+        "tag": "ebitdaqoqgrowth",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Growth",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "EBITDA Margin",
+        "tag": "ebitdamargin",
+        "definition": "EBITDA margin is a measurement of a company's operating profitability as a percentage of its total revenue. EBITDA margin can provide an investor, business owner or financial professional with a clear view of a company's operating profitability and cash flow.",
+        "statements": "Calculations",
+        "type": "Profitability",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "EBITDA Growth",
+        "tag": "ebitdagrowth",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Growth",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "EBIT Less CapEx to Interest Expense",
+        "tag": "ebitlesscapextointerestex",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Coverage",
+        "units": "Float",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "EBIT Margin",
+        "tag": "ebitmargin",
+        "definition": "EBIT Margin is the ratio of Earnings before Interest and Taxes to net revenue - earned. It is a measure of a company's profitability on sales over a specific time period. Interpretation- This indicator gives information on a company's earnings ability.",
+        "statements": "Calculations",
+        "type": "Profitability",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Close Price",
+        "tag": "close_price",
+        "definition": "",
+        "statements": "Current",
+        "type": "Prices",
+        "units": "USD per Share",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "EBIT Growth",
+        "tag": "ebitgrowth",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Growth",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Earnings before Interest, Taxes, Depreciation and Amortization",
+        "tag": "ebitda",
+        "definition": "EBITDA stands for earnings before interest, taxes, depreciation and amortization. EBITDA is one indicator of a company's financial performance and is used as a proxy for the earning potential of a business, although doing so has its drawbacks. Further, EBITDA strips out the cost of debt capital and its tax effects by adding back interest and taxes to earnings.",
+        "statements": "Calculations",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Earnings Yield",
+        "tag": "earningsyield",
+        "definition": "Earnings yield are the earnings per share for the most recent 12-month period divided by the current market price per share. The earnings yield (which is the inverse of the P/E ratio) shows the percentage of each dollar invested in the stock that was earned by the company. The earnings yield is used by many investment managers to determine optimal asset allocations.",
+        "statements": "Calculations",
+        "type": "Valuation",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Adjusted Open Price",
+        "tag": "adj_open_price",
+        "definition": "",
+        "statements": "Current",
+        "type": "Prices",
+        "units": "USD per Share",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Beta",
+        "tag": "beta",
+        "definition": "Beta is a measure of the volatility of a security compared to a market index. Intrinio uses the S&P 500 for comparison. This data tag defaults to a rolling three-year beta calculation. This calculation is updated on a bi-weekly basis and utilizes Intrinio's EOD Stock Prices data.",
+        "statements": "Current",
+        "type": "Betas",
+        "units": "Float",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Adjusted Low Price",
+        "tag": "adj_low_price",
+        "definition": "",
+        "statements": "Current",
+        "type": "Prices",
+        "units": "USD per Share",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Adjusted Close Price",
+        "tag": "adj_close_price",
+        "definition": "",
+        "statements": "Current",
+        "type": "Prices",
+        "units": "USD per Share",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "52 Week Low",
+        "tag": "52_week_low",
+        "definition": "",
+        "statements": "Current",
+        "type": "Prices",
+        "units": "USD per Share",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Adjusted Volume",
+        "tag": "adj_volume",
+        "definition": "",
+        "statements": "Current",
+        "type": "Prices",
+        "units": "Shares",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Adjusted High Price",
+        "tag": "adj_high_price",
+        "definition": "",
+        "statements": "Current",
+        "type": "Prices",
+        "units": "USD per Share",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Federal Funds Purchased and Securities Sold",
+        "tag": "fedfundspurchased",
+        "definition": "Fed funds purchased are excess reserves sold into the federal funds market where excess deposits are lent to other banks in the federal funds market.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Federal Funds Sold",
+        "tag": "fedfundssold",
+        "definition": "Federal funds sold are excess bank reserves lent in the federal funds market. When banks sell (lend) excess reserves in the fed funds market they acquire assets (fed funds sold) and lose a corresponding amount of reserves on their balance sheet. When banks borrow funds they gain reserves but they also gain a liability (fed funds purchased). These transactions are reversed when the borrowing bank returns the reserves to the selling bank.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Deferred Acquisition Cost",
+        "tag": "deferredacquisitioncost",
+        "definition": "It describes the practice of deferring the cost of acquiring a new customer over the duration of the insurance contract. Insurance companies face large upfront costs incurred in issuing new business, such as commissions to sales agents, underwriting, bonus interest and other acquisition expenses.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Dividends Payable",
+        "tag": "dividendspayable",
+        "definition": "A dividend is a distribution of a portion of a company's earnings, decided by the board of directors, to a class of its shareholders. Dividends can be issued as cash payments, as shares of stock, or other property",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Customer Deposits",
+        "tag": "customerdeposits",
+        "definition": "The interest rate paid by financial institutions to deposit account holders. Deposit accounts include certificates of deposit, savings accounts and self-directed deposit retirement accounts.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Current Deferred Revenue",
+        "tag": "currentdeferredrevenue",
+        "definition": "The current deferred revenue is the total amount of revenue to be realized over the coming year, where amounts have been prepaid, but the revenue had yet to be recognized.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Employee Benefit Assets",
+        "tag": "employeebenefitassets",
+        "definition": "Coverage earned by an employee on a pension plan, based on years of service with an employer. Accrued benefits may include vacation, sick or personal time off, or other related benefits. Employees who are laid off, retire or are fired must receive all unpaid accrued benefits.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Current Deferred & Payable Income Tax Liabilities",
+        "tag": "currentdeferredtaxliabilities",
+        "definition": "Income tax payable is a type of account in the current liabilities section of a company's balance sheet comprised of taxes that must be paid to the government within one year. Income tax payable is calculated according to the prevailing tax law in the company's home country. The taxes are calculated on the company's net income according to its corporate tax rate; if a company is due to receive a tax benefit from its revenue agency, the amount of income tax payable will decrease.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Customer and Other Receivables",
+        "tag": "customerandotherreceivables",
+        "definition": "Customer and other receivables are amounts due to the bank from customers such as fees and dues that are owed to the bank.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Current Employee Benefit Liabilities",
+        "tag": "currentemployeebenefitliabilities",
+        "definition": "The current employee benefits liability is the amount to be paid to current or former employees in the coming year for benefits the employees have earned in prior periods.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Current Deferred & Refundable Income Taxes",
+        "tag": "currentdeferredtaxassets",
+        "definition": "Tax refunds are a return of excess amounts of income tax that a taxpayer has paid to the state or federal government throughout the past year.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Common Stock",
+        "tag": "commonequity",
+        "definition": "Common stock is a security that represents ownership in a corporation. Holders of common stock exercise control by electing a board of directors and voting on corporate policy. Common stockholders are on the bottom of the priority ladder for ownership structure; in the event of liquidation, common shareholders have rights to a company's assets only after bondholders, preferred shareholders and other debtholders are paid in full.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Commitments & Contingencies",
+        "tag": "commitmentsandcontingencies",
+        "definition": "Contingency is a potential negative event which may occur in the future such as a natural disaster, fraudulent activity or a terrorist attack. In finance, managers often attempt to identify and plan for any contingencies that they feel may occur with any significant likelihood. To mitigate risk, financial managers often err on the conservative side, assuming slightly worse-than-expected outcomes, and arranging a company's affairs so that it can weather negative outcomes with the least distress possible.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Claims and Claim Expense",
+        "tag": "claimsandclaimexpenses",
+        "definition": "Expenses of adjusting claims for example, allocated claim expenses; court costs, fees, and expenses of independent adjusters, lawyers, witnesses, and other expenses that can be charged to specific claims; and unallocated claim expenses that represent salaries and other overhead expenses that are incurred in adjusting ...",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Bankers Acceptance Outstanding",
+        "tag": "bankersacceptances",
+        "definition": "Bankers' acceptance. A banker's acceptance, is a promised future payment, or time draft, which is accepted and guaranteed by a bank and drawn on a deposit at the bank. The banker's acceptance specifies the amount of money, the date, and the person to whom the payment is due.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Cash & Equivalents",
+        "tag": "cashandequivalents",
+        "definition": "Cash and cash equivalents refer to the line item on the balance sheet that reports the value of a company's assets that are cash or can be converted into cash immediately. These include bank accounts, marketable securities, commercial paper, Treasury bills and short-term government bonds with a maturity date of three months or less. Marketable securities and money market holdings are considered cash equivalents because they are liquid and not subject to material fluctuations in value.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Capital Lease Obligations",
+        "tag": "capitalleaseobligations",
+        "definition": "A capital lease is a contract entitling a renter to a temporary use of an asset, and such a lease has economic characteristics of asset ownership for accounting purposes. The capital lease requires a renter to add assets and liabilities associated with the lease if the rental contract meets specific requirements. In substance, a capital lease is considered a purchase of an asset, while an operating lease is handled as a true lease under generally accepted accounting principles (GAAP).",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Allowance for Loan and Lease Losses",
+        "tag": "allowanceforloanandleaselosses",
+        "definition": "The allowance for loan and lease losses is the accumulated expected loss the bank expects to realize on it's loan and lease portfolio, offset by actual write downs and charge offs.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Accumulated Depreciation",
+        "tag": "accumulateddepreciation",
+        "definition": "Accumulated depreciation is the cumulative depreciation of an asset up to a single point in its life. An asset's carrying value on the balance sheet is the difference between its purchase price and accumulated depreciation. A company buys and holds an asset on the balance sheet until the salvage value matches the carrying value.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Asset Retirement Reserve & Litigation Obligation",
+        "tag": "assetretirementandlitigationobligation",
+        "definition": "An accounting rule established by Financial Accounting Standards Board Rule No. 143 in June 2001 that requires public companies to recognize the fair value of retirement obligations for tangible, long-lived assets in order to make their balance sheets more accurate. This focus on the balance sheet represents a change from the income-statement approach many businesses previously used.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Accrued Interest Payable",
+        "tag": "accruedinterestpayable",
+        "definition": "Accrued interest is the amount of loan interest that has already occurred, but has not yet been paid to the lender by the borrower. The accrued interest will be reported by the borrower as both. an expense on its income statement, and. a current liability on its balance sheet.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Accumulated Other Comprehensive Income / (Loss)",
+        "tag": "aoci",
+        "definition": "OCI represents all accumulated other comprehensive income of the company from the other comprehensive income statement.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Accrued Investment Income",
+        "tag": "accruedinvestmentincome",
+        "definition": "Accrued investment income includes interest or dividends earned but not yet received. Since it has been earned and the amounts are normally expected within a year, accrued investment income is considered a current asset and recorded on the company's balance sheet.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Accounts Receivable",
+        "tag": "accountsreceivable",
+        "definition": "Accounts receivable refers to the outstanding invoices a company has or the money the company is owed from its clients. The phrase refers to accounts a business has a right to receive because it has delivered a product or service. Receivables essentially represent a line of credit extended by a company and due within a relatively short time period, ranging from a few days to a year.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Accrued Expenses",
+        "tag": "accruedexpenses",
+        "definition": "An accrued expense is an accounting expense recognized in the books before it is paid for. It is a liability, and is usually current. These expenses are typically periodic and documented on a company's balance sheet due to the high probability that they will be collected.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Earnings before Interest and Taxes",
+        "tag": "ebit",
+        "definition": "EBIT measures the profit a company generates from its operations, making it synonymous with \"operating profit.\" By ignoring tax and interest expenses, it focuses solely on a company's ability to generate earnings from operations, ignoring variables such as the tax burden and capital structure. This focus makes EBIT an especially useful metric for certain applications.",
+        "statements": "Calculations",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Dividend Payout Ratio",
+        "tag": "divpayoutratio",
+        "definition": "The dividend payout ratio provides an indication of how much money a company is returning to shareholders, versus how much money it is keeping on hand to reinvest in growth, pay off debt or add to cash reserves. This latter portion is known as retained earnings.",
+        "statements": "Calculations",
+        "type": "Effectiveness",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Dividend Yield",
+        "tag": "dividendyield",
+        "definition": "A financial ratio that indicates how much a company pays out in dividends each year relative to its share price. Dividend yield is represented as a percentage and can be calculated by dividing the dollar value of dividends paid in a given year per share of stock held by the dollar value of one share of stock.",
+        "statements": "Calculations",
+        "type": "Valuation",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Debt to Total Capital",
+        "tag": "debttototalcapital",
+        "definition": "The debt-to-capital ratio is a measurement of a company's financial leverage. The debt-to-capital ratio is calculated by taking the company's debt, including both short- and long-term liabilities and dividing it by the total capital. Total capital is all debt plus shareholders' equity, which may include items such as common stock, preferred stock and minority interest.",
+        "statements": "Calculations",
+        "type": "Capital Structure",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Debt to EBITDA",
+        "tag": "debttoebitda",
+        "definition": "Debt/EBITDA is a measure of a company's ability to pay off its incurred debt. The ratio gives the investor the approximate amount of time that would be needed to pay off all debt, ignoring the factors of interest, taxes, depreciation and amortization. Commonly used by credit rating agencies to assess a company's probability of defaulting on issued debt, a high Debt/EBITDA ratio suggests that a firm may not be able to service its debt in an appropriate manner and warrants a lowered credit rating.",
+        "statements": "Calculations",
+        "type": "Solvency",
+        "units": "Float",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Debt to Equity",
+        "tag": "debttoequity",
+        "definition": "Debt/Equity Ratio is a debt ratio used to measure a company's financial leverage, calculated by dividing a companys total liabilities by its stockholders' equity. The D/E ratio indicates how much debt a company is using to finance its assets relative to the amount of value represented in shareholders equity.",
+        "statements": "Calculations",
+        "type": "Leverage",
+        "units": "Float",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Debt-free, Cash-free Net Working Capital to Revenue",
+        "tag": "dfcfnwctorev",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Liquidity",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Debt-free Net Working Capital to Revenue",
+        "tag": "dfnwctorev",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Liquidity",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Debt-free, Cash-free Net Working Capital",
+        "tag": "dfcfnwc",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Debt-free Net Working Capital",
+        "tag": "dfnwc",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Current Ratio",
+        "tag": "currentratio",
+        "definition": "The current ratio is a liquidity ratio that measures a company's ability to pay short-term and long-term obligations. The current ratio is mainly used to give an idea of the company's ability to pay back its liabilities (debt and accounts payable) with its assets (cash, marketable securities, inventory, accounts receivable). As such, current ratio can be used to take a rough measurement of a companys financial health. The higher the current ratio, the more capable the company is of paying its obligations, as it has a larger proportion of asset value relative to the value of its liabilities.",
+        "statements": "Calculations",
+        "type": "Liquidity",
+        "units": "Float",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Cost of Revenue to Revenue",
+        "tag": "costofrevtorevenue",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Profitability",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Compound Leverage Factor",
+        "tag": "compoundleveragefactor",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Leverage",
+        "units": "Float",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Common Equity to Total Capital",
+        "tag": "commontocap",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Capital Structure",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Cash Return on Invested Capital",
+        "tag": "croic",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Effectiveness",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Capital Expenditures",
+        "tag": "capex",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Book Value per Share",
+        "tag": "bookvaluepershare",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Metric",
+        "units": "USD per Share",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Augmented Payout Ratio",
+        "tag": "augmentedpayoutratio",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Effectiveness",
+        "units": "Percentage",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Debt to NOPAT",
+        "tag": "debttonopat",
+        "definition": "",
+        "statements": "Calculations",
+        "type": "Solvency",
+        "units": "Float",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Altman Z-Score",
+        "tag": "altmanzscore",
+        "definition": "The Altman Z-score is the output of a credit-strength test that gauges a publicly traded manufacturing company's likelihood of bankruptcy. The Altman Z-score is based on five financial ratios that can be calculated from data found on a company's annual 10K report. It uses profitability, leverage, liquidity, solvency and activity to predict whether a company has a high degree of probability of being insolvent. A score below 1.8 means the company is probably headed for bankruptcy, while companies with scores above 3 are not likely to go bankrupt. Investors can use Altman Z-scores to determine whether they should buy or sell a particular stock if they're concerned about the underlying company's financial strength. Investors may consider purchasing a stock if its Altman Z-Score value is closer to 3 and selling or shorting a stock if the value is closer to 1.8.",
+        "statements": "Calculations",
+        "type": "Solvency",
+        "units": "Float",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Other Current Nonoperating Assets",
+        "tag": "othercurrentnonoperatingassets",
+        "definition": "Other current nonoperating assets are all current assets of the business that do not fit into another category and are nonoperating in nature",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Other Long-Term Liabilities",
+        "tag": "otherlongtermliabilities",
+        "definition": "Other long-term liabilities are a balance sheet item that lumps together obligations not due within 12 months. They are part of total liabilities, and the components of \"other\" long-term liabilities are deemed by the company to be not important enough to warrant identification of each amount individually on the balance sheet.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Other Noncurrent Nonoperating Assets",
+        "tag": "othernoncurrentnonoperatingassets",
+        "definition": "Other nom current nonoperating assets are all nom current assets of the business that do not fit into another category and are nonoperating in nature",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Total Liabilities & Shareholders' Equity",
+        "tag": "totalliabilitiesandequity",
+        "definition": "Total liabilities and equity is the summation line item representing the sum of claims on the assets of the company by equity holders and those who the company owes.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Total Noncurrent Assets",
+        "tag": "totalnoncurrentassets",
+        "definition": "Noncurrent assets are company long-term investments where the full value will not be realized within the accounting year. Examples of noncurrent assets include investments in other companies, intangible assets such as goodwill, brand recognition and intellectual property, and property, plant and equipment. Noncurrent assets appear on the company's balance sheet.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Cash Income Taxes Paid",
+        "tag": "cashincometaxespaid",
+        "definition": "The total amount of cash income taxes paid by the company for the period.",
+        "statements": "Cash Flow Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Impairment Charge",
+        "tag": "impairmentexpense",
+        "definition": "A specific reduction on a company's balance sheet that adjusts the value of a company's goodwill. Due to accounting rules, a company must monitor and test the value of its goodwill to determine if it is overvalued. If it is, the company must issue an impairment charge on its balance sheet, to take into account the reduced value of the goodwill.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Other Revenue",
+        "tag": "otherrevenue",
+        "definition": "Other revenue is revenue generated from various activities other than the companies core operations.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Total Other Income / (Expense), net",
+        "tag": "totalotherincome",
+        "definition": "Total other income / (expense) is the sum of interest income and nonoperating income /(expense) less interest expense.  This represents the entire amount of nonoperating income / (expense) for the company.",
+        "statements": "Income Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Total Depreciation and Amortization",
+        "tag": "depreciationandamortization",
+        "definition": "Depreciation and amortization (D&A) are noncash expenses used in accrual accounting. Depreciation is a means of allocating the cost of a material asset over its useful life. Amortization is the deduction of capital expenses over a specified time period, typically the life of an asset.",
+        "statements": "Calculations",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Total Long-Term Debt",
+        "tag": "ltdebtandcapleases",
+        "definition": "Long-term debt consists of loans and financial obligations lasting over one year. Long-term debt for a company would include any financing or leasing obligations that are to come due in a greater than 12-month period. Long-term debt also applies to governments: nations can also have long-term debt.",
+        "statements": "Calculations",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "High Price",
+        "tag": "high_price",
+        "definition": "",
+        "statements": "Current",
+        "type": "Prices",
+        "units": "USD per Share",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "Accounts Payable",
+        "tag": "accountspayable",
+        "definition": "Accounts payable (AP) is an accounting entry that represents an entity's obligation to pay off a short-term debt to its creditors. On many balance sheets, the accounts payable entry appears under the heading current liabilities. Another common usage of AP refers to a business department or division that is responsible for making payments owed by the company to suppliers and other creditors.",
+        "statements": "Balance Sheet Statement",
+        "type": "Metric",
+        "units": "USD",
+        "historical": true,
+        "screenable": true
+    },
+    {
+        "name": "52 Week High",
+        "tag": "52_week_high",
+        "definition": "",
+        "statements": "Current",
+        "type": "Prices",
+        "units": "USD per Share",
+        "historical": true,
+        "screenable": true
+    }
+]
