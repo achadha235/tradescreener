@@ -5,10 +5,10 @@ import clsx from "clsx";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-export default function CreateScreener() {
+export default function CreateScreener({ defaultValue }) {
   const success = false;
   const [active, setActive] = useState(false);
-  const [screenerPrompt, setScreenerPrompt] = useState("");
+  const [screenerPrompt, setScreenerPrompt] = useState(defaultValue || "");
   const [email, setEmail] = useState("");
   const router = useRouter();
   const onSubmitRequestSuccess = (data) => {
@@ -54,7 +54,7 @@ export default function CreateScreener() {
         />
         <Button
           onClick={onSubmitRequestClicked}
-          disabled={isMutating}
+          disabled={isMutating || defaultValue === screenerPrompt}
           startIcon={isMutating ? <CircularProgress size={10} /> : <Search />}
           className="mt-4 ml-auto"
           variant="contained"

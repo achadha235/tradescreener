@@ -1,38 +1,13 @@
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
+import useStaticJSON from "@/client/getStaticJSON";
+import { Download } from "@mui/icons-material";
+import { Button, ThemeProvider } from "@mui/material";
+import { DataGrid, GridCellParams, GridColDef } from "@mui/x-data-grid";
+import clsx from "clsx";
+import { kebabCase } from "lodash";
+import numeral from "numeral";
 import { useEffect, useState } from "react";
 import { usePapaParse } from "react-papaparse";
-import useStaticJSON from "@/client/getStaticJSON";
-import { Button, CircularProgress, ThemeProvider } from "@mui/material";
 import { getNumberFormat } from "./ScreenerFilter/ScreenerFilter";
-import numeral from "numeral";
-import clsx from "clsx";
-import { Download } from "@mui/icons-material";
-import { kebabCase } from "lodash";
-import {
-  DataGrid,
-  GridCellParams,
-  GridColDef,
-  GridValueGetterParams,
-} from "@mui/x-data-grid";
-
-/// TODO: Make this table sticky
-// https://codesandbox.io/s/mui-table-sticky-column-demo-7h7eq?file=/demo.tsx:1419-1445
-
-function createData(
-  name: string,
-  calories: number,
-  fat: number,
-  carbs: number,
-  protein: number
-) {
-  return { name, calories, fat, carbs, protein };
-}
 
 const CSVDownloader = ({
   csvData,
@@ -107,6 +82,7 @@ export default function ScreenerTable({ csv, screenerName }) {
   const columns: GridColDef[] = visibleHeader?.map((header, i) => {
     let headerName = header;
     let numberFormat = "0,0.00a";
+
     const tag = allDatatags?.find((tag) => tag.tag === header);
 
     if (tag) {
@@ -118,12 +94,13 @@ export default function ScreenerTable({ csv, screenerName }) {
       return {
         field: "ticker",
         headerName: "Ticker",
-        width: 120,
+        width: 80,
       };
     } else if (header === "name") {
       return {
         field: header,
         headerName: "Name",
+        minWidth: 140,
         flex: 1.5,
       };
     }
@@ -134,6 +111,7 @@ export default function ScreenerTable({ csv, screenerName }) {
       flex: 1,
       editable: false,
       resizable: false,
+      minWidth: 140,
       valueGetter: (params) => {
         const txt = numeral(parseFloat(params.value).toPrecision(5)).format(
           numberFormat
@@ -182,92 +160,6 @@ export default function ScreenerTable({ csv, screenerName }) {
           />
         </ThemeProvider>
       )}
-    </div>
-  );
-
-  if (isLoading) {
-    return <CircularProgress />;
-  }
-
-  return (
-    <div>
-      <div className="flex w-full justify-between px-4 mt-4">
-        <div>Found {rows?.rows?.length} results</div>
-        <CSVDownloader
-          csvData={csv}
-          filename={`${kebabCase(screenerName)}.csv`}
-        />
-      </div>
-      <TableContainer
-        className="p-4 max-w-full"
-        component={({ children }) => (
-          <Paper className="p-4 m-4 overflow-x-scroll">{children}</Paper>
-        )}
-      >
-        <Table
-          aria-label="simple table"
-          initialState={{
-            pagination: {
-              paginationModel: { page: 0, pageSize: 5 },
-            },
-          }}
-          pageSizeOptions={[5, 10]}
-        >
-          <TableHead>
-            <TableRow>
-              {rows?.headers?.slice(1).map((header) => {
-                let headerName = "Unknown";
-                if (header === "ticker") {
-                  headerName = "Ticker";
-                } else if (header === "name") {
-                  headerName = "Name";
-                }
-                const tag = allDatatags.find((tag) => tag.tag === header);
-                if (tag) {
-                  headerName = tag.name;
-                }
-                return <TableCell key={header}>{headerName}</TableCell>;
-              })}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows?.rows?.slice(0, -1).map((row, i) => (
-              <TableRow key={row.name}>
-                {rows.headers.slice(1)?.map((header) => {
-                  let txt;
-                  if (header === "ticker" || header === "name") {
-                    txt = row[header];
-                  } else {
-                    const tag = allDatatags.find((tag) => tag.tag === header);
-                    let numberFormat: string;
-                    if (!tag) {
-                      numberFormat = "0,0.00a";
-                    } else {
-                      numberFormat = getNumberFormat(tag);
-                    }
-                    txt = numeral(
-                      parseFloat(row[header]).toPrecision(5)
-                    ).format(numberFormat);
-                  }
-
-                  return (
-                    <TableCell
-                      className={clsx("font-mono", {
-                        "bg-neutral-800": i % 2 === 0,
-                      })}
-                      key={header}
-                      component="th"
-                      scope="row"
-                    >
-                      {txt}
-                    </TableCell>
-                  );
-                })}
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
     </div>
   );
 }

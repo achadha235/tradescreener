@@ -23,6 +23,9 @@ export const themeOptions = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
+          ":disabled": {
+            color: tw.theme.colors.text.disabled,
+          },
           textTransform: "none",
         },
       },

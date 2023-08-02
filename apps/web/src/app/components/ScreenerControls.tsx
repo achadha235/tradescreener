@@ -1,11 +1,12 @@
 "use client";
 
 import useStaticJSON from "@/client/getStaticJSON";
-import { CircularProgress } from "@mui/material";
+import { Box, Button, CircularProgress, Modal, Paper } from "@mui/material";
 import clsx from "clsx";
 import { groupBy, orderBy, uniq } from "lodash";
 import { useState } from "react";
 import { ScreenerFilter } from "./ScreenerFilter/ScreenerFilter";
+import { Close, Lightbulb } from "@mui/icons-material";
 
 function SelectTagCategory({
   setCurrentTagType,
@@ -56,6 +57,7 @@ function SelectTagCategory({
 export function ScreenerControls({ screener }) {
   const [currentTagType, setCurrentTagType] = useState("Active");
   const [indexingPreference, setIndexingPreference] = useState("all_index");
+  const [modalOpen, setModalOpen] = useState(false);
 
   const { data: allDatatags, isLoading } = useStaticJSON("/datatags.json");
   const { data: enabledTagsStr, isLoading: isLoadingEnabledTags } =
@@ -134,7 +136,10 @@ export function ScreenerControls({ screener }) {
           />
         ))}
       </div>
-      <div className="w-full flex justify-end">
+      <div className="w-full flex justify-end mt-4">
+        <Button startIcon={<Lightbulb />} onClick={() => setModalOpen(true)}>
+          Explain
+        </Button>
         <div className="ml-auto">
           <select
             outline-none
@@ -149,6 +154,52 @@ export function ScreenerControls({ screener }) {
           </select>
         </div>
       </div>
+      <Modal
+        onClose={() => {
+          setModalOpen(false);
+        }}
+        open={modalOpen}
+      >
+        <Box
+          onClick={() => {
+            setModalOpen(false);
+          }}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          style={{ minHeight: "100vh" }}
+        >
+          <Paper
+            className="w-full max-w-2xl p-20 relative"
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+          >
+            <Button
+              className="absolute top-2 right-2"
+              onClick={() => {
+                setModalOpen(false);
+              }}
+            >
+              <Close />
+            </Button>
+            <div className="text-lg font-bold text-neutral-500 mb-4">
+              Explanation
+            </div>
+            <ol className="text-base gap-4 flex-col flex">
+              {screener.screenerData.explanation.map((reason, i) => {
+                if (
+                  reason.indexOf("Country") > -1 &&
+                  reason.indexOf("'United States of America'") > -1
+                ) {
+                  return null;
+                }
+                return <li key={i}>{reason}</li>;
+              })}
+            </ol>
+          </Paper>
+        </Box>
+      </Modal>
     </div>
   );
 }

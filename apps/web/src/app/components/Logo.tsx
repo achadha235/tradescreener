@@ -9,8 +9,8 @@ export default function Logo({
   color?;
 }) {
   return (
-    <div className={clsx("text-2xl p-2", className)}>
-      🟨 <span className="font-bold tracking-tighter">Yellowbrick</span>
+    <div className={clsx("text-sm md:text-2xl p-2", className)}>
+      <span className="font-bold tracking-tighter">Tradescreener.ai</span>
     </div>
   );
 }

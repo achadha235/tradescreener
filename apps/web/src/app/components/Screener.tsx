@@ -15,14 +15,7 @@ import { useState } from "react";
 import useSubmitEmail from "@/client/submitEmail";
 import { Check } from "@mui/icons-material";
 import { useLocalStorage } from "usehooks-ts";
-
-function ScreenerPrompt({ prompt }) {
-  return (
-    <div className="text-2xl bg-background-paper rounded-md border border-neutral-500 border-solid p-4">
-      {prompt}
-    </div>
-  );
-}
+import { ScreenerPrompt } from "./ScreenerPrompt";
 
 function SignupPrompt({ screener }) {
   const [userToken, setUserToken] = useLocalStorage("userToken", null);
@@ -146,7 +139,6 @@ export default function Screener({ id }) {
   if (status === "completed") {
     screenerIsReady = true;
   }
-
   const screenerPrompt = data.screener.screenerData.userRequest.screenerPrompt;
   // screenerIsReady = false;
   if (!screenerIsReady) {

@@ -15,7 +15,7 @@ module.exports = {
       colors: {
         primary: {
           main: "#ffffff",
-          contrastText: "#000000",
+          contrastText: "rgba(255,255,255,0.87)",
         },
         secondary: {
           main: "#0819f7",
@@ -28,7 +28,7 @@ module.exports = {
         text: {
           primary: "rgba(255,255,255,0.87)",
           secondary: "#c9c9c9",
-          disabled: "rgba(47,41,41,0.38)",
+          disabled: "rgba(255,255,255,0.87)",
         },
         highlight: "#161515",
       },
