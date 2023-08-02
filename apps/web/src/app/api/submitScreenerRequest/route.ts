@@ -12,16 +12,16 @@ export async function POST(
   { params }: { params: { slug: string } }
 ) {
   const data = await request.json();
-  const { email } = data;
-  // Step 1: Create or find the user with prisma
-  const user = await prisma.user.upsert({
-    where: { email },
-    update: {},
-    create: {
-      id: "usr_" + uuidv4(),
-      email,
-    },
-  });
+  // const { email } = data;
+  // // Step 1: Create or find the user with prisma
+  // const user = await prisma.user.upsert({
+  //   where: { email },
+  //   update: {},
+  //   create: {
+  //     id: "usr_" + uuidv4(),
+  //     email,
+  //   },
+  // });
 
   // Step 2: Create a new screener request with prisma
   const screenerRequest = await prisma.screener.create({
@@ -31,7 +31,6 @@ export async function POST(
         status: "pending",
         userRequest: data,
       },
-      userId: user.id,
     },
   });
 

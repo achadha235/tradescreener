@@ -26,7 +26,9 @@ def save_screener(screener_id: str, screener: Screener):
     }
 
     api_endpoint = os.getenv("SCREENER_API_URL")
-    requests.post(api_endpoint + "/api/updateScreener/" + screener_id, json=payload)
+    return requests.post(
+        api_endpoint + "/api/updateScreener/" + screener_id, json=payload
+    )
 
 
 async def process(job: Job, *args, **kwargs):

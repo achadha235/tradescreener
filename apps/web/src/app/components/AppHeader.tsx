@@ -13,7 +13,7 @@ export default function AppHeader() {
   const params: any = useParams();
   const { data } = useScreener(params?.screenerId, isNil(params.screenerId));
 
-  const screenerName = null; // data?.screener?.screenerData?.name;
+  const screenerName = data?.screener?.screenerData?.name;
   const screenerNumberID =
     "Screener #" + parseInt(data?.screener.id.slice(-5), 16);
   const displayId = screenerName || screenerNumberID;

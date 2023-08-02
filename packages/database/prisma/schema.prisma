@@ -21,12 +21,16 @@ model User {
   data            Json?
   stripeAccountId String?
   screeners       Screener[]
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
 }
 
 model Screener {
-  id           String  @id @default(uuid())
+  id           String   @id @default(uuid())
   name         String?
   screenerData Json?
-  userId       String
-  user         User    @relation(fields: [userId], references: [id])
+  userId       String?
+  user         User?    @relation(fields: [userId], references: [id])
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }

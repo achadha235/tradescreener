@@ -15,7 +15,7 @@ from llama_index.llms import OpenAI as LlamaOpenAI
 from llama_index import ServiceContext
 
 from langchain import PromptTemplate
-from langchain.chat_models import ChatOpenAI
+from langchain.llms import OpenAIChat
 from langchain.output_parsers import PydanticOutputParser
 
 from books.book_index import load
@@ -75,8 +75,8 @@ book_index = load()
 
 llama_llm = LlamaOpenAI(temperature=0, model="gpt-4")
 
-gpt4 = ChatOpenAI(temperature=0, model="gpt-4")
-gpt3 = ChatOpenAI(temperature=0, model="gpt-3.5-turbo")
+gpt4 = OpenAIChat(temperature=0, model="gpt-4")
+gpt3 = OpenAIChat(temperature=0, model="gpt-3.5-turbo")
 
 service_context = ServiceContext.from_defaults(llm=llama_llm)
 
@@ -101,7 +101,7 @@ The client as said this to you:
 Based on the avaliable filters above and the client request, design a set of conditions using the filter above to select stocks that you would invest in. Make sure to explain your reasoning for each filter you select. Rely on your past value investing knowledge to determine appropriate values for each filter. If the user has mentioned any explicit preferences, make sure to incorporate them into your screener. Your screener should not be unrealistically strict, and should be able to return a reasonable number of stocks. 
 
 Your final condition should be a single line of pseudocode representing a filtering condition that can be used to filter stocks in the screener. Example of a valid output: (Price to Revenue >= 1 and Price to Revenue <= 2) or (Market Capitalization >= 100,000,000,000 and (Altman Z-Score > 3 and Quick Ratio >= 1))
-You must always use the condition (Country = United States of America) in your screener to filter for US-only stocks so that you never provide the user a non-US stock. You must never return placeholders like "Industry Average" or "Industry Maximum" as filter values and must always use real numbers.
+You must always use the condition (Country = United States of America) in your screener to filter for US-only stocks so that you never provide the user a non-US stock. You must NEVER return placeholders like "Industry Average" or "Industry Maximum" as filter placeholders values and must always use real numbers that are reasonable.
 """
 
 name_prompt = """
@@ -114,9 +114,9 @@ Client Request:
 Filter Conditions:
 {screener_filters}
 
-Return just the name of the screener without any additional text.
+Return just the name of the screener without any additional text or quotation marks. Do not mention the country filter in the name.
 
-Example: "Undervalued, distressed mid-cap sttocks"
+Example: Undervalued, distressed mid-cap sttocks
 """
 
 

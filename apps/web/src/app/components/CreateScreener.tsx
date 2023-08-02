@@ -48,7 +48,6 @@ export default function CreateScreener() {
           variant="contained"
           size="large"
           color="secondary"
-          endIcon={isMutating ? <CircularProgress size={10} /> : null}
         >
           {isMutating ? "Submitting Request" : "Find Stocks"}
         </Button>
