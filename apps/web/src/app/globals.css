@@ -73,3 +73,34 @@ input {
   box-shadow: none;
   @apply border border-neutral-500 rounded-sm;
 }
+
+.MuiDataGrid-row:nth-child(2n) {
+  @apply bg-neutral-800;
+}
+
+.MuiDataGrid-row:nth-child(2n + 1) {
+  @apply bg-neutral-900;
+}
+
+.MuiDataGrid-cell {
+  border: none !important;
+  @apply font-mono;
+}
+.MuiDataGrid-withBorderColor {
+  border: none !important;
+  outline: none !important;
+}
+
+.MuiDataGrid-iconButtonContainer > .MuiButtonBase-root {
+  @apply text-white;
+}
+
+.gradientbg {
+  background: rgb(27, 27, 27);
+  background: linear-gradient(
+    0deg,
+    rgba(27, 27, 27, 1) 0%,
+    rgba(27, 27, 27, 0.46124387254901966) 65%,
+    rgba(27, 27, 27, 0) 100%
+  );
+}

@@ -14,7 +14,7 @@ const stepRange = [0.25, 0.8];
 export function getNumberFormat(tag) {
   let numberFormat = "0,0[.]00[00]";
   if (tag.units.startsWith("USD")) {
-    numberFormat = "$0,0.00a";
+    numberFormat = "$0,0.0[00]a";
   } else if (tag.units === "Percentage") {
     numberFormat = "0,0[.][00]%";
   }
@@ -203,38 +203,6 @@ export function ScreenerFilter({
     }
   };
 
-  // useEffect(() => {
-  //   if (!sliderFn || !lowerboundX) {
-  //     return;
-  //   }
-  //   const y = sliderFn.f(lowerboundX);
-  //   // setLowerboundY(y as number);
-  // }, [sliderFn, lowerboundX]);
-
-  // useEffect(() => {
-  //   if (lowerboundY === -Infinity) {
-  //     setLowerboundLabel("Any");
-  //   } else {
-  //     setLowerboundLabel(numeral(lowerboundY).format(numberFormat) as string);
-  //   }
-  // }, [sliderFn, lowerboundY, setLowerboundLabel]);
-
-  // useEffect(() => {
-  //   if (upperboundY === +Infinity) {
-  //     setUpperboundLabel("Any");
-  //   } else {
-  //     setUpperboundLabel(numeral(upperboundY).format(numberFormat) as string);
-  //   }
-  // }, [sliderFn, upperboundY, setUpperboundLabel]);
-
-  // Format values for hover tooltip on slider
-
-  // // useEffect(() => {
-  // //   setTagStats(screenerStats[indexingPreference || "all_index"][tag.tag]);
-  // // }, [tag, screenerStats]);
-
-  // useEffect(syncFiltersEffect, [filterConditions]);
-
   const marks = [
     {
       value: sliderFn.inv(stat.median) as number,
@@ -244,13 +212,12 @@ export function ScreenerFilter({
   const slider = (
     <Slider
       value={[lowerboundX, upperboundX]}
+      size="small"
       onChange={(e: any) => {
-        debugger;
         const [lowerboundX, upperboundX] = e.target.value;
         setLowerboundX(lowerboundX);
         setUpperboundX(upperboundX);
       }}
-      size="small"
       marks={marks}
       valueLabelDisplay="auto"
       min={0}
@@ -262,7 +229,6 @@ export function ScreenerFilter({
         "opacity-50": !filterActive,
       })}
       classes={{
-        mark: "bg-blue-500 h-[18px] w-[2px] border border-solid border-blue-500 opacity-1",
         markLabel: "text-xs font-mono",
       }}
     />
@@ -270,21 +236,27 @@ export function ScreenerFilter({
 
   const lowerBoundInput = (
     <InputBase
+      style={{
+        fontSize: 12,
+      }}
       onBlur={onBlurLowerbound}
       inputRef={lowerboundInputRef}
       classes={{
         input: "text-center",
       }}
-      className="w-[90px] h-8 px-[2px] bg-highlight text-white text-sm mx-0 border border-neutral-500 text-center"
+      className="w-[90px] h-8 px-[2px] bg-highlight text-white mx-0 border border-neutral-500 text-center"
     />
   );
 
   const upperBoundInput = (
     <InputBase
+      style={{
+        fontSize: 12,
+      }}
       onBlur={onBlurUpperbound}
       inputRef={upperboundInputRef}
       classes={{
-        input: "text-center",
+        input: "text-center text-xs",
       }}
       className="w-[90px] h-8 px-[2px] bg-highlight text-white text-sm mx-0 border border-neutral-500"
     />
@@ -301,235 +273,3 @@ export function ScreenerFilter({
     </div>
   );
 }
-
-// export function ScreenerFilter({
-//   tag,
-//   filterConditions,
-//   screenerStats,
-//   indexingPreference,
-// }) {
-//   let stats, tag_stats;
-//   stats = screenerStats[indexingPreference || "all_index"];
-//   tag_stats = stats[tag.tag];
-//   const sliderFn = useInterpolatedRangeSlider({
-//     stats: tag_stats,
-//     stepSize: stepSize,
-//     stepRange,
-//   });
-//   const numberFormat = getNumberFormat(tag);
-//   const [value, setValue] = useState([0, 1]);
-//   const [upperBoundText, setUpperboundText] = useState("Any");
-//   const [lowerBoundText, setLowerboundText] = useState("Any");
-//   const lowerboundInputRef = useRef<any>();
-//   const upperboundInputRef = useRef<HTMLInputElement>();
-
-//   const lowerboundActive = value[0] !== 0;
-//   const upperboundActive = value[1] !== 1;
-
-//   const filterActive = lowerboundActive || upperboundActive;
-
-//   const onSliderMoved = (e, newValue) => {
-//     setValue(newValue);
-//   };
-
-//   const getSliderValueText = useCallback(
-//     (x) => getTextFromSliderXValue(x, numberFormat, sliderFn),
-//     [sliderFn, numberFormat]
-//   );
-
-//   const updateBoundsTextEffect =
-//     (updateBoundary, ref, getBoundaryVal) => () => {
-//       if (document.activeElement === ref.current) {
-//         return;
-//       }
-//       updateBoundary(getSliderValueText(getBoundaryVal(value)));
-//     };
-
-//   const onFilterConditionUpdated = () => {
-//     if (!tag || !filterConditions) {
-//       return;
-//     }
-//     const findOperators = (tag: string, operators: string[]) => (clause) =>
-//       clause.field === tag && operators.includes(clause.operator);
-
-//     const lowerFilter = find(
-//       filterConditions.clauses,
-//       findOperators(tag.tag, ["gte", "gt"])
-//     );
-//     const upperFilter = find(
-//       filterConditions.clauses,
-//       findOperators(tag.tag, ["lte", "lt"])
-//     );
-
-//     if (lowerFilter) {
-//       const lowerValue = parseFloat(lowerFilter.value);
-//       const lowerX = sliderFn.inv(lowerValue) as number;
-//       setValue([lowerX, value[1]]);
-//       setLowerboundText(getSliderValueText(lowerX));
-//     }
-
-//     if (upperFilter) {
-//       const upperValue = parseFloat(upperFilter.value);
-//       const upperX = sliderFn.inv(upperValue) as number;
-//       setValue([value[0], upperX]);
-//       setUpperboundText(getSliderValueText(upperX));
-//     }
-//   };
-
-//   const lowerBoundGetter = (value) => value[0];
-//   const upperBoundGetter = (value) => value[0];
-
-//   useEffect(() => {
-//     updateBoundsTextEffect(
-//       setLowerboundText,
-//       lowerboundInputRef,
-//       lowerBoundGetter
-//     );
-//   }, [value, setLowerboundText, lowerboundInputRef]);
-
-//   useEffect(() => {
-//     updateBoundsTextEffect(
-//       setUpperboundText,
-//       upperboundInputRef,
-//       upperBoundGetter
-//     );
-//   }, [value, setUpperboundText, upperboundInputRef]);
-
-//   useEffect(onFilterConditionUpdated, [filterConditions, tag]);
-
-//   const onLowerBoundBlur = (e) => {
-//     const val = numeral(e.target.value).value() as number;
-//     const x = sliderFn.inv(val) as any;
-//     if (x >= value[1]) {
-//       setLowerboundText(getSliderValueText(value[0]));
-//       return;
-//     }
-//     setValue([x, value[1]]);
-//   };
-
-//   const onUpperBoundBlur = (e) => {
-//     const val = numeral(e.target.value).value() as number;
-//     const x = sliderFn.inv(val) as any;
-//     if (x <= value[0]) {
-//       setUpperboundText(getSliderValueText(value[1]));
-//       return;
-//     }
-//     setValue([value[0], x]);
-//   };
-
-//   const onLowerBoundKeyDown = (e) => {
-//     if (e.key === "Enter") {
-//       (e.target as any).blur();
-//     } else if (e.key === "ArrowUp") {
-//       debugger;
-//       const newX = value[0] + stepSize;
-//       setLowerboundText(getSliderValueText(newX));
-//       setValue([newX, value[1]]);
-//     } else if (e.key === "ArrowDown") {
-//       const newX = value[0] - stepSize;
-//       setLowerboundText(getSliderValueText(newX));
-//       setValue([newX, value[1]]);
-//     }
-//   };
-
-//   const onUpperBoundKeyDown = (e) => {
-//     if (e.key === "Enter") {
-//       (e.target as any).blur();
-//     } else if (e.key === "ArrowUp") {
-//       const newX = value[1] + stepSize;
-//       setLowerboundText(getSliderValueText(newX));
-//       setValue([value[0], newX]);
-//     } else if (e.key === "ArrowDown") {
-//       const newX = value[1] - stepSize;
-//       setUpperboundText(getSliderValueText(newX));
-//       setValue([value[0], newX]);
-//     }
-//   };
-
-//   const marks = [
-//     {
-//       value: sliderFn.inv(tag_stats.median) as number,
-//       label: "Avg " + numeral(tag_stats.median.toFixed(2)).format(numberFormat),
-//     },
-//   ];
-
-//   const containerStyle = clsx("p-1 px-2 bg-neutral-900", {
-//     "outline outline-neutral-500 rounded-md": filterActive,
-//   });
-
-//   const slider = (
-//     <Slider
-//       size="small"
-//       marks={marks}
-//       valueLabelDisplay="auto"
-//       onChange={onSliderMoved}
-//       min={0}
-//       max={1}
-//       step={stepSize}
-//       disableSwap
-//       value={value}
-//       className={clsx({
-//         "opacity-50": !filterActive,
-//       })}
-//       classes={{
-//         mark: "bg-red-500 h-[14px] w-[3px]  border border-solid border-white",
-//         markLabel: "text-xs font-mono",
-//       }}
-//       valueLabelFormat={(x) => {
-//         return getSliderValueText(x);
-//       }}
-//     />
-//   );
-
-//   const lowerBoundInput = (
-//     <InputBase
-//       onKeyDown={onLowerBoundKeyDown}
-//       onBlur={onLowerBoundBlur}
-//       inputRef={lowerboundInputRef}
-//       onChange={(e) => setLowerboundText(e.target.value)}
-//       value={lowerBoundText}
-//       classes={{
-//         input: "text-center",
-//       }}
-//       defaultValue={"Any"}
-//       className="w-[90px] h-8 px-[2px] bg-highlight text-white text-sm mx-0 border border-neutral-500 text-center"
-//     />
-//   );
-
-//   const upperBoundInput = (
-//     <InputBase
-//       onKeyDown={onUpperBoundKeyDown}
-//       onBlur={onUpperBoundBlur}
-//       inputRef={upperboundInputRef}
-//       onChange={(e) => setUpperboundText(e.target.value)}
-//       value={upperBoundText}
-//       classes={{
-//         input: "text-center",
-//       }}
-//       className="w-[90px] h-8 px-[2px] bg-highlight text-white text-sm mx-0 border border-neutral-500"
-//     />
-//   );
-
-//   if (!tag_stats) {
-//     return <CircularProgress />;
-//   }
-
-//   return (
-//     <div className={containerStyle}>
-//       <ScreenerFilterHeader tag={tag} filterActive={filterActive} />
-
-//       <div className="w-full">
-//         <div className="flex gap-4">
-//           {lowerBoundInput}
-//           {slider}
-//           {upperBoundInput}
-//         </div>
-//       </div>
-//       <div className="text-xs">
-//         {JSON.stringify(
-//           filterConditions.clauses.filter((f) => f.field === tag.tag)
-//         )}
-//       </div>
-//     </div>
-//   );
-// }

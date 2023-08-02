@@ -106,7 +106,12 @@ export function ScreenerControls({ screener }) {
         categoriesInCondition={categoriesInCondition}
       />
 
-      <div className="grid grid-cols-4 gap-4 w-full max-h-[500px] overflow-scroll p-1">
+      <div
+        className={clsx(
+          "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full overflow-scroll p-1 mt-4",
+          { "max-h-[500px]": currentTagType !== "Active" }
+        )}
+      >
         {visibleTags.map((tag) => (
           <ScreenerFilter
             filterConditions={filterConditions.clauses.filter(

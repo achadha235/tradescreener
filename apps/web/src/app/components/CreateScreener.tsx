@@ -1,11 +1,13 @@
 import useSubmitScreenerRequest from "@/client/submitScreenerRequest";
 import { Search } from "@mui/icons-material";
 import { Button, CircularProgress, InputBase } from "@mui/material";
+import clsx from "clsx";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function CreateScreener() {
   const success = false;
+  const [active, setActive] = useState(false);
   const [screenerPrompt, setScreenerPrompt] = useState("");
   const [email, setEmail] = useState("");
   const router = useRouter();
@@ -29,8 +31,18 @@ export default function CreateScreener() {
 
   const requestScreen = (
     <div className="flex flex-col justify-center items-center gap-4 w-full max-w-2xl">
-      <div className="w-full flex flex-col bg-highlight">
+      <div
+        className={clsx(
+          "w-full flex flex-col bg-highlight outline-4 outline rounded-md p-4 m-2 shadow-lg",
+          {
+            "outline-neutral-600": !active,
+            "outline-white": active,
+          }
+        )}
+      >
         <InputBase
+          onFocus={(e) => setActive(true)}
+          onBlur={(e) => setActive(false)}
           disabled={isMutating}
           value={screenerPrompt}
           onChange={(e) => setScreenerPrompt(e.target.value)}

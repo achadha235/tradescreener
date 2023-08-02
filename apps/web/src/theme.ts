@@ -9,6 +9,17 @@ const fontFamily = "'Hind Madurai', sans-serif";
 
 export const themeOptions = createTheme({
   components: {
+    MuiSlider: {
+      styleOverrides: {
+        mark: {
+          height: 25,
+          width: 4,
+          backgroundColor: "blue",
+          opacity: 1,
+          outline: "solid 1px lightblue",
+        },
+      },
+    },
     MuiButton: {
       styleOverrides: {
         root: {

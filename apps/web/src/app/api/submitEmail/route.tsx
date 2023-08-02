@@ -1,10 +1,8 @@
+import prisma from "@screener/db";
 import { NextRequest, NextResponse } from "next/server";
 import { v4 as uuidv4 } from "uuid";
-import prisma from "@screener/db";
-// POST handler: Create a new API key for a user
-
 import { Novu } from "@novu/node";
-import numeral from "numeral";
+import { encrypt } from "../auth";
 
 const novu = new Novu(process.env.NOVU_API_KEY as string);
 
@@ -47,5 +45,7 @@ export async function POST(
     });
   }
 
-  return NextResponse.json({ success: true });
+  const token = encrypt(user, process.env.JWT_SECRET as string);
+
+  return NextResponse.json({ success: true, token });
 }
