@@ -2,7 +2,7 @@
 import { Info } from "@mui/icons-material";
 import { CircularProgress, InputBase, Slider, Tooltip } from "@mui/material";
 import clsx from "clsx";
-import { filter, find, isNil } from "lodash";
+import { debounce, filter, find, isNil, throttle } from "lodash";
 import { useInterpolatedRangeSlider as interpolatedRangeSlider } from "@/app/components/ScreenerFilter/rangeSlider";
 import numeral from "numeral";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -141,6 +141,50 @@ export function ScreenerFilter({
     [filterConditions]
   );
 
+  // useEffect(() => {
+  //   let lbFilter;
+  //   if (lowerboundFilter) {
+  //     lbFilter = lowerboundFilter;
+  //   } else {
+  //     lbFilter = {
+  //       field: tag.tag,
+  //       operator: "gte",
+  //     };
+  //   }
+  //   const y = sliderFn.f(lowerboundX);
+  //   if (y === -Infinity || y === Infinity) {
+  //     setLowerBoundFilter(null);
+  //     return;
+  //   }
+
+  //   setLowerBoundFilter({
+  //     ...lbFilter,
+  //     value: numeral(y).format("0[.][00000]"),
+  //   });
+  // }, [lowerboundX, setLowerBoundFilter, sliderFn]);
+
+  // useEffect(() => {
+  //   let ubFilter;
+  //   if (upperboundFilter) {
+  //     ubFilter = upperboundFilter;
+  //   } else {
+  //     ubFilter = {
+  //       field: tag.tag,
+  //       operator: "lte",
+  //     };
+  //   }
+  //   const y = sliderFn.f(upperboundX);
+  //   if (y === -Infinity || y === Infinity) {
+  //     setUpperBoundFilter(null);
+  //     return;
+  //   }
+
+  //   setUpperBoundFilter({
+  //     ...ubFilter,
+  //     value: numeral(y).format("0[.][00000]"),
+  //   });
+  // }, [upperboundX, setUpperBoundFilter, sliderFn]);
+
   useEffect(() => {
     if (!lowerboundFilter?.value || !sliderFn) {
       return;
@@ -165,6 +209,20 @@ export function ScreenerFilter({
 
   useEffect(syncFiltersEffect, []);
 
+  const triggerConditionUpdate = () => {
+    const getVal = (v) => {
+      if (v === "Any") {
+        return v;
+      }
+      return numeral(v).value();
+    };
+    onConditionChanged({
+      tag,
+      lower: getVal(lowerboundInputRef.current.value),
+      upper: getVal(upperboundInputRef.current.value),
+    });
+  };
+
   const onBlurUpperbound = (e) => {
     let newUpperX;
     if (e.target.value === "Any" || e.target.value.trim() === "") {
@@ -173,6 +231,7 @@ export function ScreenerFilter({
     const y: any = numeral(e.target.value).value();
     if (isNil(y) && upperboundInputRef?.current) {
       upperboundInputRef.current.value = getTextForX(upperboundX);
+      triggerConditionUpdate();
     }
     const yLower = sliderFn.f(lowerboundX);
     if (y >= yLower!) {
@@ -181,6 +240,7 @@ export function ScreenerFilter({
 
     if (newUpperX) {
       setUpperboundX(newUpperX);
+      triggerConditionUpdate();
     }
   };
 
@@ -192,6 +252,7 @@ export function ScreenerFilter({
     const y: any = numeral(e.target.value).value();
     if (isNil(y) && lowerboundInputRef?.current) {
       lowerboundInputRef.current.value = getTextForX(lowerboundX);
+      triggerConditionUpdate();
     }
     const yUpper = sliderFn.f(upperboundX);
     if (y <= yUpper!) {
@@ -199,6 +260,7 @@ export function ScreenerFilter({
     }
 
     if (newLowerX) {
+      triggerConditionUpdate();
       setLowerboundX(newLowerX);
     }
   };
@@ -211,6 +273,9 @@ export function ScreenerFilter({
   ];
   const slider = (
     <Slider
+      onChangeCommitted={() => {
+        triggerConditionUpdate();
+      }}
       value={[lowerboundX, upperboundX]}
       size="small"
       onChange={(e: any) => {
@@ -270,6 +335,8 @@ export function ScreenerFilter({
         {slider}
         {upperBoundInput}
       </div>
+      <div className="text-xs">lb: {JSON.stringify(lowerboundFilter)}</div>
+      <div className="text-xs">ub: {JSON.stringify(upperboundFilter)}</div>
     </div>
   );
 }

@@ -3,10 +3,23 @@
 import useStaticJSON from "@/client/getStaticJSON";
 import { Box, Button, CircularProgress, Modal, Paper } from "@mui/material";
 import clsx from "clsx";
-import { groupBy, orderBy, uniq } from "lodash";
-import { useState } from "react";
+import {
+  clone,
+  filter,
+  find,
+  groupBy,
+  indexOf,
+  isNil,
+  orderBy,
+  remove,
+  set,
+  uniq,
+  update,
+} from "lodash";
+import { useEffect, useState } from "react";
 import { ScreenerFilter } from "./ScreenerFilter/ScreenerFilter";
 import { Close, Lightbulb } from "@mui/icons-material";
+import { cloneDeep } from "lodash";
 
 function SelectTagCategory({
   setCurrentTagType,
@@ -54,6 +67,8 @@ function SelectTagCategory({
   );
 }
 
+function mergeFilterConditions(conditions, update) {}
+
 export function ScreenerControls({ screener }) {
   const [currentTagType, setCurrentTagType] = useState("Active");
   const [indexingPreference, setIndexingPreference] = useState("all_index");
@@ -66,15 +81,12 @@ export function ScreenerControls({ screener }) {
   const { data: screenerStats, isLoading: isLoadingScreenerStats } =
     useStaticJSON("/screener-index-stats.json");
 
-  if (isLoading || isLoadingScreenerStats || isLoadingEnabledTags) {
-    return <CircularProgress />;
-  }
   const enabledTags = enabledTagsStr
     ?.split(", ")
     .map((s) => s?.split(":")[0]?.trim());
 
   let enabledTagsData = orderBy(
-    allDatatags.filter((d) => enabledTags?.includes(d.tag)),
+    allDatatags?.filter((d) => enabledTags?.includes(d.tag)),
     "name"
   );
 
@@ -85,20 +97,54 @@ export function ScreenerControls({ screener }) {
   const tagsInCondition = filterConditions?.clauses.map((c) => c.field);
   let visibleTags: any;
 
+  const [updatedFilterCondition, setUpdatedFilterCondition] =
+    useState(filterConditions);
+
+  if (isLoading || isLoadingScreenerStats || isLoadingEnabledTags) {
+    return <CircularProgress />;
+  }
+
   if (currentTagType === "All") {
-    visibleTags = enabledTagsData;
+    visibleTags = enabledTagsData.map((t) => t.tag);
   } else if (currentTagType === "Active") {
-    visibleTags = enabledTagsData.filter((d) =>
-      tagsInCondition.includes(d.tag)
-    );
+    visibleTags = enabledTagsData
+      .filter((d) => tagsInCondition.includes(d.tag))
+      .map((d) => d.tag);
   } else {
-    visibleTags = datatagsByCategory[currentTagType];
+    visibleTags = datatagsByCategory[currentTagType].map((t) => t.tag);
   }
 
   const categoriesInCondition = enabledTagsData
     .filter((d) => tagsInCondition?.includes(d.tag))
     .map((d) => d.type);
   const useDefaultIndexTags = ["marketcap"];
+
+  const onScreenerFilterConditionChanged = ({ tag, upper, lower }) => {
+    const otherConditions = updatedFilterCondition.clauses.filter((c) => {
+      return c.field !== tag.tag;
+    });
+    if (upper !== "Any") {
+      otherConditions.push({
+        field: tag.tag,
+        op: "lte",
+        value: upper.toString(),
+      });
+    }
+
+    if (lower !== "Any") {
+      otherConditions.push({
+        field: tag.tag,
+        op: "gte",
+        value: lower.toString(),
+      });
+    }
+
+    setUpdatedFilterCondition({
+      ...updatedFilterCondition,
+      clauses: otherConditions,
+    });
+  };
+
   return (
     <div className="text-2xl bg-background-paper rounded-md p-4  min-h-[250px]">
       <SelectTagCategory
@@ -114,28 +160,31 @@ export function ScreenerControls({ screener }) {
           { "max-h-[500px]": currentTagType !== "Active" }
         )}
       >
-        {visibleTags.map((tag) => (
-          <ScreenerFilter
-            filterConditions={filterConditions.clauses.filter(
-              (filterCondition) => {
-                return filterCondition.field === tag.tag;
-              }
-            )}
+        {enabledTagsData.map((tag) => (
+          <div
             key={tag.tag}
-            onConditionChanged={(newConditon) => {
-              console.log(newConditon);
-            }}
-            stat={
-              screenerStats[
-                useDefaultIndexTags.includes(tag.tag)
-                  ? "all"
-                  : indexingPreference
-              ][tag.tag]
-            }
-            tag={tag}
-          />
+            className={clsx({ hidden: !visibleTags.includes(tag.tag) })}
+          >
+            <ScreenerFilter
+              onConditionChanged={onScreenerFilterConditionChanged}
+              filterConditions={filterConditions.clauses.filter(
+                (filterCondition) => {
+                  return filterCondition.field === tag.tag;
+                }
+              )}
+              stat={
+                screenerStats[
+                  useDefaultIndexTags.includes(tag.tag)
+                    ? "all"
+                    : indexingPreference
+                ][tag.tag]
+              }
+              tag={tag}
+            />
+          </div>
         ))}
       </div>
+      {JSON.stringify(updatedFilterCondition)}
       <div className="w-full flex justify-end mt-4">
         <Button startIcon={<Lightbulb />} onClick={() => setModalOpen(true)}>
           Explain

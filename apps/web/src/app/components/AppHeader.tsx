@@ -14,11 +14,12 @@ import clsx from "clsx";
 import { isNil } from "lodash";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocalStorage } from "usehooks-ts";
 import Logo from "./Logo";
 
 function AccountButton() {
+  const [mounted, setMounted] = useState(false);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -31,9 +32,17 @@ function AccountButton() {
   const [userToken, setUserToken] = useLocalStorage("userToken", null);
   const { data } = useMyScreeners();
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!userToken || !mounted) {
+    return null;
+  }
+
   if (userToken) {
     return (
-      <div>
+      <>
         <Button
           aria-controls={open ? "fade-menu" : undefined}
           aria-haspopup="true"
@@ -54,45 +63,36 @@ function AccountButton() {
           onClose={handleClose}
           TransitionComponent={Fade}
         >
-          {data?.screeners && data?.screeners.length > 0 && (
-            <>
-              {data?.screeners
-                .filter((s) => s.screenerData.status === "completed")
-                .map((screener) => (
-                  <Link key={screener.id} href={`/screener/${screener.id}`}>
-                    <MenuItem onClick={handleClose}>
-                      {screener.screenerData.name}
-                    </MenuItem>
-                  </Link>
-                ))}
-            </>
-          )}
+          {data?.screeners
+            .filter((s) => s.screenerData.status === "completed")
+            .map((screener) => (
+              <Link key={screener.id} href={`/screener/${screener.id}`}>
+                <MenuItem onClick={handleClose}>
+                  {screener.screenerData.name}
+                </MenuItem>
+              </Link>
+            ))}
+
           <Divider />
           <p className="uppercase text-sm text-neutral-400 px-2">
             Still Processing
           </p>
-          {data?.screeners && data?.screeners.length > 0 && (
-            <>
-              {data?.screeners
-                .filter((s) => s.screenerData.status !== "completed")
-                .map((screener) => (
-                  <Link key={screener.id} href={`/screener/${screener.id}`}>
-                    <MenuItem onClick={handleClose}>
-                      <span>
-                        Screener #{parseInt(screener.id.slice(-5), 16)}{" "}
-                        <CircularProgress size={12} />{" "}
-                      </span>
-                    </MenuItem>
-                  </Link>
-                ))}
-            </>
-          )}
+          {data?.screeners
+            .filter((s) => s.screenerData.status !== "completed")
+            .map((screener) => (
+              <Link key={screener.id} href={`/screener/${screener.id}`}>
+                <MenuItem onClick={handleClose}>
+                  <span>
+                    Screener #{parseInt(screener.id.slice(-5), 16)}{" "}
+                    <CircularProgress size={12} />{" "}
+                  </span>
+                </MenuItem>
+              </Link>
+            ))}
         </Menu>
-      </div>
+      </>
     );
   }
-
-  return null;
 }
 
 export default function AppHeader() {
