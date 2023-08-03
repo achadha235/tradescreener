@@ -41,6 +41,9 @@ function AccountButton() {
   }
 
   if (userToken) {
+    const inProgressScreeners = data?.screeners.filter(
+      (s) => s.screenerData.status !== "completed"
+    );
     return (
       <>
         <Button
@@ -74,9 +77,11 @@ function AccountButton() {
             ))}
 
           <Divider />
-          <p className="uppercase text-sm text-neutral-400 px-2">
-            Still Processing
-          </p>
+          {inProgressScreeners?.length > 0 && (
+            <p className="uppercase text-sm text-neutral-400 px-2">
+              Still Processing
+            </p>
+          )}
           {data?.screeners
             .filter((s) => s.screenerData.status !== "completed")
             .map((screener) => (
@@ -100,7 +105,7 @@ export default function AppHeader() {
   const { data } = useScreener(params?.screenerId, isNil(params.screenerId));
   const screenerName = data?.screener?.screenerData?.name;
   const screenerNumberID =
-    "Screener #" + parseInt(data?.screener.id.slice(-5), 16);
+    "Screener #" + parseInt(params.screenerId?.slice(-5), 16);
   const displayId = screenerName || screenerNumberID;
   return (
     <div className="flex w-full justify-between p-2">

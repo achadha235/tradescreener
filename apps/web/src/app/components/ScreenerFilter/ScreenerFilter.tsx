@@ -29,7 +29,6 @@ function getTextFromSliderXValue(x, numberFormat, sliderFn) {
   if ([-Infinity, Infinity].includes(y) || Number.isNaN(y)) {
     return "Any";
   }
-  debugger;
   if (Math.abs(y) <= 1e-7) {
     return numeral(0).format(numberFormat);
   }
@@ -214,7 +213,7 @@ export function ScreenerFilter({
       if (v === "Any") {
         return v;
       }
-      return numeral(v).value();
+      return new Decimal(numeral(v).format("0[.][00000]")).toString();
     };
     onConditionChanged({
       tag,
@@ -335,8 +334,6 @@ export function ScreenerFilter({
         {slider}
         {upperBoundInput}
       </div>
-      <div className="text-xs">lb: {JSON.stringify(lowerboundFilter)}</div>
-      <div className="text-xs">ub: {JSON.stringify(upperboundFilter)}</div>
     </div>
   );
 }

@@ -1,25 +1,13 @@
 "use client";
 
 import useStaticJSON from "@/client/getStaticJSON";
+import { Close, Lightbulb } from "@mui/icons-material";
 import { Box, Button, CircularProgress, Modal, Paper } from "@mui/material";
 import clsx from "clsx";
-import {
-  clone,
-  filter,
-  find,
-  groupBy,
-  indexOf,
-  isNil,
-  orderBy,
-  remove,
-  set,
-  uniq,
-  update,
-} from "lodash";
+import { groupBy, orderBy, uniq } from "lodash";
 import { useEffect, useState } from "react";
 import { ScreenerFilter } from "./ScreenerFilter/ScreenerFilter";
-import { Close, Lightbulb } from "@mui/icons-material";
-import { cloneDeep } from "lodash";
+import { motion, AnimatePresence } from "framer-motion";
 
 function SelectTagCategory({
   setCurrentTagType,
@@ -67,9 +55,11 @@ function SelectTagCategory({
   );
 }
 
-function mergeFilterConditions(conditions, update) {}
-
-export function ScreenerControls({ screener }) {
+export function ScreenerControls({
+  loading,
+  screener,
+  screenerConditionChanged,
+}) {
   const [currentTagType, setCurrentTagType] = useState("Active");
   const [indexingPreference, setIndexingPreference] = useState("all_index");
   const [modalOpen, setModalOpen] = useState(false);
@@ -94,16 +84,21 @@ export function ScreenerControls({ screener }) {
   const datatagsByCategory = groupBy(enabledTagsData, "type");
 
   const filterConditions = JSON.parse(screener.screenerData.filter_conditions);
-  const tagsInCondition = filterConditions?.clauses.map((c) => c.field);
-  let visibleTags: any;
-
   const [updatedFilterCondition, setUpdatedFilterCondition] =
     useState(filterConditions);
+
+  const tagsInCondition = uniq([
+    ...filterConditions?.clauses.map((c) => c.field),
+    ...updatedFilterCondition?.clauses.map((c) => c.field),
+  ]);
+  let visibleTags: any;
+  useEffect(() => {
+    screenerConditionChanged?.(updatedFilterCondition);
+  }, [updatedFilterCondition]);
 
   if (isLoading || isLoadingScreenerStats || isLoadingEnabledTags) {
     return <CircularProgress />;
   }
-
   if (currentTagType === "All") {
     visibleTags = enabledTagsData.map((t) => t.tag);
   } else if (currentTagType === "Active") {
@@ -126,7 +121,7 @@ export function ScreenerControls({ screener }) {
     if (upper !== "Any") {
       otherConditions.push({
         field: tag.tag,
-        op: "lte",
+        operator: "lte",
         value: upper.toString(),
       });
     }
@@ -134,7 +129,7 @@ export function ScreenerControls({ screener }) {
     if (lower !== "Any") {
       otherConditions.push({
         field: tag.tag,
-        op: "gte",
+        operator: "gte",
         value: lower.toString(),
       });
     }
@@ -146,7 +141,30 @@ export function ScreenerControls({ screener }) {
   };
 
   return (
-    <div className="text-2xl bg-background-paper rounded-md p-4  min-h-[250px]">
+    <div className="text-2xl relative bg-background-paper rounded-md p-4  min-h-[250px]">
+      {loading && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0,0,0,0.4)",
+
+            top: 0,
+            left: 0,
+            zIndex: 40,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          className="absolute w-full h-full bg-[rgba(0,0,0,0.4)] top-0 left-0 z-40 flex justify-center items-center"
+        >
+          <CircularProgress />
+        </motion.div>
+      )}
       <SelectTagCategory
         setCurrentTagType={setCurrentTagType}
         currentTagType={currentTagType}
@@ -184,14 +202,12 @@ export function ScreenerControls({ screener }) {
           </div>
         ))}
       </div>
-      {JSON.stringify(updatedFilterCondition)}
       <div className="w-full flex justify-end mt-4">
         <Button startIcon={<Lightbulb />} onClick={() => setModalOpen(true)}>
           Explain
         </Button>
         <div className="ml-auto">
           <select
-            outline-none
             value={indexingPreference}
             onChange={(e) => {
               setIndexingPreference(e.target.value);

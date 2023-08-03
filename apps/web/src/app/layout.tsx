@@ -33,6 +33,13 @@ export default function RootLayout({
             <AnimatePresence mode="wait">
               <Suspense fallback={<LoadingScreen />}>{children}</Suspense>
             </AnimatePresence>
+            {/* <footer className="text-base font-light p-4 text-neutral-500">
+              The information provided on Tradescreener.ai is for informational
+              purposes only and does not constitute investment advice or any
+              other sort of advice, and you should not treat any of the{" "}
+              {"site's"} content as such. We hope you find Tradescreener.ai
+              useful.
+            </footer> */}
           </body>
         </html>
       </UserProvider>

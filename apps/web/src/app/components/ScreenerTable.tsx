@@ -1,6 +1,6 @@
 import useStaticJSON from "@/client/getStaticJSON";
 import { Download } from "@mui/icons-material";
-import { Button, ThemeProvider } from "@mui/material";
+import { Button, Fade, Skeleton, ThemeProvider } from "@mui/material";
 import { DataGrid, GridCellParams, GridColDef } from "@mui/x-data-grid";
 import clsx from "clsx";
 import { kebabCase } from "lodash";
@@ -44,7 +44,7 @@ const CSVDownloader = ({
   );
 };
 
-export default function ScreenerTable({ csv, screenerName }) {
+export default function ScreenerTable({ loading, csv, screenerName }) {
   const [rows, setRows] = useState<any>({ headers: [], rows: [] });
   const { readString } = usePapaParse();
   const [csvData, setCSVData] = useState<any>([]);
@@ -54,31 +54,36 @@ export default function ScreenerTable({ csv, screenerName }) {
     const result = readString(csv, {
       worker: true,
       complete(results) {
-        setCSVData(results);
         let csvRows: any[] = results["data"];
         let headers = csvRows[0];
         let newRows: any[] = [];
         for (let i = 1; i < csvRows.length; i++) {
           let row = csvRows[i];
           let rowData = { id: i };
+          if (row.length !== headers.length) {
+            continue;
+          }
           for (let j = 0; j < headers.length; j++) {
             rowData[headers[j]] = row[j];
           }
           newRows.push(rowData);
         }
         setRows({
-          headers: headers.filter((h) => h !== "figi"),
+          headers: headers.filter((h) => h !== "figi" && h.length > 0),
           rows: newRows,
         });
+        setCSVData(results);
       },
     });
   }
 
   useEffect(() => {
-    setRows(produceData(csv));
-  }, [csv]);
+    if (!isLoading) {
+      produceData(csv);
+    }
+  }, [csv, isLoading]);
 
-  const visibleHeader = rows?.headers.slice(1);
+  const visibleHeader = rows?.headers;
   const columns: GridColDef[] = visibleHeader?.map((header, i) => {
     let headerName = header;
     let numberFormat = "0,0.00a";
@@ -126,19 +131,27 @@ export default function ScreenerTable({ csv, screenerName }) {
     return params;
   });
 
-  const somerows = rows?.rows?.slice(0, -1);
+  const somerows = rows?.rows;
 
   return (
-    <div>
-      <div className="flex w-full justify-between px-4 mt-4">
-        <div>Found {rows?.rows?.length} results</div>
-        <CSVDownloader
-          csvData={csv}
-          filename={`${kebabCase(screenerName)}.csv`}
-        />
-      </div>
-      {!isLoading && allDatatags && somerows && somerows.length > 0 && (
-        <ThemeProvider theme={{}}>
+    <Fade in={!isLoading} timeout={300} className="min-h-500px">
+      <div className="h-full w-full">
+        <div className="flex w-full justify-between px-4 mt-4">
+          <div>
+            {rows?.rows?.length ? (
+              <>Found {rows?.rows?.length} results</>
+            ) : (
+              <>Found 0 results. Try changing the filters.</>
+            )}
+          </div>
+
+          <CSVDownloader
+            csvData={csv}
+            filename={`${kebabCase(screenerName)}.csv`}
+          />
+        </div>
+
+        {allDatatags && somerows && (
           <DataGrid
             className="m-4"
             rows={somerows}
@@ -149,7 +162,7 @@ export default function ScreenerTable({ csv, screenerName }) {
             rowSelection={false}
             initialState={{
               pagination: {
-                paginationModel: { page: 0, pageSize: 25 },
+                paginationModel: { page: 0, pageSize: 10 },
               },
             }}
             disableRowSelectionOnClick={true}
@@ -158,8 +171,8 @@ export default function ScreenerTable({ csv, screenerName }) {
             disableColumnMenu={true}
             pageSizeOptions={[5, 10, 25, 50, 100]}
           />
-        </ThemeProvider>
-      )}
-    </div>
+        )}
+      </div>
+    </Fade>
   );
 }

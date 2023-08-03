@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-export default function CreateScreener({ defaultValue }) {
+export default function CreateScreener({ defaultValue }: { defaultValue? }) {
   const success = false;
   const [active, setActive] = useState(false);
   const [screenerPrompt, setScreenerPrompt] = useState(defaultValue || "");

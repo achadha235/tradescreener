@@ -46,7 +46,7 @@ worker = Worker(
     {
         "lockDuration": 5 * 60 * 1000,
         "autorun": False,
-        "connection": "redis://localhost:6380",
+        "connection": os.getenv("REDIS_URL"),
     },
 )
 

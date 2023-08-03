@@ -6,7 +6,7 @@ const { BullMQAdapter } = require("@bull-board/api/bullMQAdapter");
 const { ExpressAdapter } = require("@bull-board/express");
 
 const Redis = require("ioredis");
-const redis = new Redis("redis://localhost:6380");
+const redis = new Redis(process.env.REDIS_URL || "redis://localhost:6380");
 
 const someQueue = new Queue("stockScreener", { connection: redis }); // if you have a special connection to redis.
 

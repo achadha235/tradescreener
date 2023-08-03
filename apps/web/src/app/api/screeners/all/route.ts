@@ -6,7 +6,10 @@ export async function GET(
   request: NextRequest,
   { params }: { params: { slug: string } }
 ) {
-  // fetch all screeners
+  if (request.url) {
+    //pass
+  }
+
   const screeners = await prisma.screener.findMany();
   const filtered = screeners.filter((screener: any) => {
     return screener.screenerData.status === "completed";

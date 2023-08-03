@@ -1,4 +1,5 @@
 import useSWRMutation from "swr/mutation";
+import { useSWRConfig } from "swr";
 
 async function submitRequest(url, { arg }: { arg: string }) {
   const response = await fetch(url, {
@@ -12,11 +13,15 @@ async function submitRequest(url, { arg }: { arg: string }) {
 }
 
 export default function useSubmitEmail({ onSuccess, onError }) {
+  const { mutate } = useSWRConfig();
   return useSWRMutation(
     `${process.env.NEXT_PUBLIC_APP_URL}/api/submitEmail`,
     submitRequest,
     {
-      onSuccess: onSuccess,
+      onSuccess: (...args) => {
+        mutate(`${process.env.NEXT_PUBLIC_APP_URL}/api/screeners/me`);
+        onSuccess && onSuccess(...args);
+      },
       onError: onError,
     }
   );

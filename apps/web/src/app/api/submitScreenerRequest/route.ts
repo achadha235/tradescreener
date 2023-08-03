@@ -1,10 +1,10 @@
 import prisma from "@screener/db";
 import { NextRequest, NextResponse } from "next/server";
 import { Queue } from "bullmq";
-import Redis, { RedisOptions } from "ioredis";
-const redis = new Redis("redis://localhost:6380");
+
 import { v4 as uuidv4 } from "uuid";
 import { decrypt } from "../auth";
+import { redis } from "../redis";
 
 const myQueue = new Queue("stockScreener", { connection: redis });
 // POST handler: Create a new API key for a user

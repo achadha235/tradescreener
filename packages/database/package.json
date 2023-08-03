@@ -1,4 +1,5 @@
 {
+    "private": true,
     "name": "@screener/db",
     "version": "1.0.0",
     "description": "Screener databasse",
