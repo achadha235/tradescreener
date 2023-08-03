@@ -4,3 +4,4 @@ snowflake-sqlalchemy
 p_tqdm
 python-dotenv
 colorama
+pandas
