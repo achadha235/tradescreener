@@ -1,8 +1,12 @@
-from dotenv import load_dotenv
-
-load_dotenv()
-
 import os
+
+is_prod = os.environ.get("IS_HEROKU", None)
+
+if not is_prod:
+    from dotenv import load_dotenv
+
+    load_dotenv()
+
 import requests
 import logging
 from bullmq import Worker, Job

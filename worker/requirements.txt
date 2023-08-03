@@ -2,4 +2,4 @@ bullmq
 snowflake-connector-python
 snowflake-sqlalchemy
 p_tqdm
-
+python-dotenv
