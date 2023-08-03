@@ -1,3 +1,6 @@
+pydantic
+langchain
+llama-index
 bullmq
 snowflake-connector-python
 snowflake-sqlalchemy
