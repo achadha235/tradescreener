@@ -8,3 +8,4 @@ p_tqdm
 python-dotenv
 colorama
 pandas
+tabulate
