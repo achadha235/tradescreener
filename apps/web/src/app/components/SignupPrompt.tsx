@@ -47,6 +47,7 @@ export function SignupPrompt({ screener }) {
           placeholder="Enter your email"
         />
         <Button
+          className="w-32"
           startIcon={isMutating && <CircularProgress size={12} />}
           disabled={isMutating}
           onClick={onEmailSubmitted}

@@ -112,7 +112,7 @@ export default function AppHeader() {
       <Link href="/">
         <Logo />
       </Link>
-      {data && (
+      {/* {data && (
         <div
           className={clsx("flex justify-center items-center", {
             "text-neutral-500": isNil(screenerName),
@@ -120,7 +120,7 @@ export default function AppHeader() {
         >
           {displayId}
         </div>
-      )}
+      )} */}
       <div className="w-auto h-2">
         <AccountButton />
       </div>

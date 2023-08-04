@@ -1,3 +1,4 @@
+import { Home, RocketLaunchTwoTone } from "@mui/icons-material";
 import clsx from "clsx";
 import Image from "next/image";
 
@@ -9,8 +10,13 @@ export default function Logo({
   color?;
 }) {
   return (
-    <div className={clsx("text-sm md:text-2xl p-2", className)}>
-      <span className="font-bold tracking-tighter">Tradescreener.ai</span>
+    <div className={clsx("md:text-2xl p-2", className)}>
+      <span className="font-bold tracking-tighter hidden md:flex">
+        📊 Tradescreener.ai
+      </span>
+      <span className="font-bold tracking-tighter flex md:hidden">
+        <RocketLaunchTwoTone /> Tradescreener.ai
+      </span>
     </div>
   );
 }

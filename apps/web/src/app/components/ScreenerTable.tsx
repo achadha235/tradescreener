@@ -10,10 +10,12 @@ import { usePapaParse } from "react-papaparse";
 import { getNumberFormat } from "./ScreenerFilter/ScreenerFilter";
 
 const CSVDownloader = ({
+  disabled,
   csvData,
   className,
   filename,
 }: {
+  disabled;
   className?;
   csvData;
   filename;
@@ -32,6 +34,7 @@ const CSVDownloader = ({
 
   return (
     <Button
+      disabled={disabled}
       size="small"
       className={className}
       startIcon={<Download />}
@@ -99,13 +102,13 @@ export default function ScreenerTable({ loading, csv, screenerName }) {
       return {
         field: "ticker",
         headerName: "Ticker",
-        width: 80,
+        width: 100,
       };
     } else if (header === "name") {
       return {
         field: header,
         headerName: "Name",
-        minWidth: 140,
+        minWidth: 180,
         flex: 1.5,
       };
     }
@@ -134,24 +137,25 @@ export default function ScreenerTable({ loading, csv, screenerName }) {
   const somerows = rows?.rows;
 
   return (
-    <Fade in={!isLoading} timeout={300} className="min-h-500px">
+    <Fade in={!isLoading} timeout={300} className="min-h-500px pb-10">
       <div className="h-full w-full">
         <div className="flex w-full justify-between px-4 mt-4">
           <div>
             {rows?.rows?.length ? (
               <>Found {rows?.rows?.length} results</>
             ) : (
-              <>Found 0 results. Try changing the filters.</>
+              <>Found 0 results.</>
             )}
           </div>
 
           <CSVDownloader
+            disabled={rows?.rows?.length === 0}
             csvData={csv}
             filename={`${kebabCase(screenerName)}.csv`}
           />
         </div>
 
-        {allDatatags && somerows && (
+        {allDatatags && somerows && somerows?.length > 0 && (
           <DataGrid
             className="m-4"
             rows={somerows}

@@ -141,7 +141,7 @@ export function ScreenerControls({
   };
 
   return (
-    <div className="text-2xl relative bg-background-paper rounded-md p-4  min-h-[250px]">
+    <div className="text-2xl relative bg-background-paper rounded-md p-2  min-h-[250px]">
       {loading && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -235,7 +235,7 @@ export function ScreenerControls({
           style={{ minHeight: "100vh" }}
         >
           <Paper
-            className="w-full max-w-2xl p-20 relative"
+            className="w-full max-w-2xl p-4 overflow-scroll relative"
             onClick={(e) => {
               e.stopPropagation();
             }}

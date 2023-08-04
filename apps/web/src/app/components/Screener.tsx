@@ -9,6 +9,8 @@ import { ScreenerPrompt } from "./ScreenerPrompt";
 import { ScreenerLoading } from "./ScreenerLoading";
 import { useEffect, useState } from "react";
 import useScreenerFilter from "@/client/runScreenerFilter";
+import clsx from "clsx";
+import { isNil } from "lodash";
 
 export default function Screener({ id }) {
   const [customCondition, setCustomCondition] = useState();
@@ -45,7 +47,11 @@ export default function Screener({ id }) {
   }
 
   if (isLoading) {
-    return <LoadingScreen />;
+    return (
+      <div className="max-w-8xl h-[50vh] mx-auto flex flex-col gap-4 mt-10 px-4">
+        <LoadingScreen />
+      </div>
+    );
   }
 
   if (!data?.screener) {
@@ -57,9 +63,24 @@ export default function Screener({ id }) {
     );
   }
 
+  const screenerName = data?.screener?.screenerData?.name;
+  const screenerNumberID = "Screener #" + parseInt(id?.slice(-5), 16);
+  const displayId = screenerName || screenerNumberID;
+
+  const screenerTitle = (
+    <div
+      className={clsx("flex justify-center items-center", {
+        "text-neutral-500": isNil(screenerName),
+      })}
+    >
+      {displayId}
+    </div>
+  );
+
   if (!screenerIsReady) {
     return (
       <div className="max-w-8xl mx-auto flex flex-col gap-4 mt-10 px-4">
+        {screenerTitle}
         <ScreenerPrompt prompt={screenerPrompt} />
         <ScreenerLoading screener={data.screener} />
         <OtherScreeners />
@@ -69,6 +90,7 @@ export default function Screener({ id }) {
 
   return (
     <div className="max-w-8xl mx-auto flex flex-col gap-4 mt-10 px-4">
+      {screenerTitle}
       <ScreenerPrompt prompt={screenerPrompt} />
       {data && (
         <ScreenerControls

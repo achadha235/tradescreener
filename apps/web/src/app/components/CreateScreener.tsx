@@ -30,13 +30,13 @@ export default function CreateScreener({ defaultValue }: { defaultValue? }) {
   }
 
   const requestScreen = (
-    <div className="flex flex-col justify-center items-center gap-4 w-full max-w-2xl">
+    <div className="flex flex-col justify-center items-center gap-4 w-full max-w-2xl p-4 -ml-2">
       <div
         className={clsx(
-          "w-full flex flex-col bg-highlight outline-4 outline rounded-md p-4 m-2 shadow-lg",
+          "w-full flex flex-col bg-highlight border-4 border-solid p-4 m-2 shadow-lg  rounded-xl",
           {
-            "outline-neutral-600": !active,
-            "outline-white": active,
+            "border-neutral-600": !active,
+            "border-white": active,
           }
         )}
       >

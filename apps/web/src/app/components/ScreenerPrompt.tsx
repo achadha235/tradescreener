@@ -34,7 +34,7 @@ export function ScreenerPrompt({ prompt }) {
           style={{ minHeight: "100vh" }}
         >
           <Paper
-            className="w-full max-w-2xl p-20 relative"
+            className="w-full max-w-2xl p-4 relative"
             onClick={(e) => {
               e.stopPropagation();
             }}

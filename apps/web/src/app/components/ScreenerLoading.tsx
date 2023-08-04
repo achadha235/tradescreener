@@ -6,7 +6,7 @@ export function ScreenerLoading({ screener }) {
   return (
     <div className="bg-neutral-900 p-4 rounded">
       <div className="max-w-md mx-auto py-10">
-        <div className="text-4xl">🔍 Finding your stocks...</div>
+        <div className="text-2xl lg:text-4xl">🔍 Finding your stocks...</div>
         <p className=" font-light">
           Our robots are hard at work building your screener. This usually takes
           2-5 minutes.{" "}
