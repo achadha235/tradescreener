@@ -1,16 +1,8 @@
 "use client";
-import { ThemeProvider } from "@emotion/react";
-import { UserProvider } from "@auth0/nextjs-auth0/client";
-import { themeOptions } from "@/theme";
-import { CssBaseline } from "@mui/material";
-import Splash from "@/app/components/Splash";
-import Demo from "@/app/components/Demo";
-import AppHeader from "./components/AppHeader";
-import Headline from "./components/Headline";
+import { motion } from "framer-motion";
 import CommunityScreeners from "./components/CommunityScreeners";
-import { OtherScreeners } from "./components/OtherScreeners";
 import CreateScreener from "./components/CreateScreener";
-import { motion, AnimatePresence } from "framer-motion";
+import Headline from "./components/Headline";
 
 export default async function Home() {
   return (

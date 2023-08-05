@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-sync-scripts */
 "use client";
-import { UserProvider } from "@auth0/nextjs-auth0/client";
 import { AnimatePresence } from "framer-motion";
 import { themeOptions } from "@/theme";
 import { ThemeProvider } from "@emotion/react";
@@ -25,56 +24,55 @@ export default function RootLayout({
   return (
     <ThemeProvider theme={themeOptions}>
       <CssBaseline />
-      <UserProvider>
-        <html lang="en">
-          <body className={clsx("w-screen h-[100dvh]")}>
-            <AppHeader />
-            <AnimatePresence mode="wait">
-              <Suspense fallback={<LoadingScreen />}>
-                {children}
-                <motion.footer
-                  initial={{ opacity: 0 }} // Initial state with 0 opacity
-                  animate={{ opacity: 1 }} // Target state with full opacity
-                  transition={{ delay: 1 }} // 1-second delay before the animation starts
-                >
-                  <div
-                    className={clsx(
-                      "text-base font-light p-4 text-neutral-500  mx-auto max-w-6xl",
-                      {
-                        "pb-52 ": pathname === "/",
-                      }
-                    )}
-                  >
-                    The information provided on Tradescreener.ai is for
-                    informational purposes only and does not constitute
-                    investment advice or any other sort of advice, and you
-                    should not treat any of the {"site's"} content as such. By
-                    using Tradescreener.ai, you agree to{" "}
-                    <a
-                      target="_blank"
-                      className="font-bold underline"
-                      href="/privacy.html"
-                    >
-                      Privacy Policy
-                    </a>{" "}
-                    and{" "}
-                    <a
-                      target="_blank"
-                      className="font-bold underline"
-                      href="/terms.html"
-                    >
-                      Terms of Service.
-                    </a>{" "}
-                    We hope you find Tradescreener.ai useful.
-                  </div>
-                </motion.footer>
-              </Suspense>
-            </AnimatePresence>
 
-            <Tracking />
-          </body>
-        </html>
-      </UserProvider>
+      <html lang="en">
+        <body className={clsx("w-screen h-[100dvh]")}>
+          <AppHeader />
+          <AnimatePresence mode="wait">
+            <Suspense fallback={<LoadingScreen />}>
+              {children}
+              <motion.footer
+                initial={{ opacity: 0 }} // Initial state with 0 opacity
+                animate={{ opacity: 1 }} // Target state with full opacity
+                transition={{ delay: 1 }} // 1-second delay before the animation starts
+              >
+                <div
+                  className={clsx(
+                    "text-base font-light p-4 text-neutral-500  mx-auto max-w-6xl",
+                    {
+                      "pb-52 ": pathname === "/",
+                    }
+                  )}
+                >
+                  The information provided on Tradescreener.ai is for
+                  informational purposes only and does not constitute investment
+                  advice or any other sort of advice, and you should not treat
+                  any of the {"site's"} content as such. By using
+                  Tradescreener.ai, you agree to{" "}
+                  <a
+                    target="_blank"
+                    className="font-bold underline"
+                    href="/privacy.html"
+                  >
+                    Privacy Policy
+                  </a>{" "}
+                  and{" "}
+                  <a
+                    target="_blank"
+                    className="font-bold underline"
+                    href="/terms.html"
+                  >
+                    Terms of Service.
+                  </a>{" "}
+                  We hope you find Tradescreener.ai useful.
+                </div>
+              </motion.footer>
+            </Suspense>
+          </AnimatePresence>
+
+          <Tracking />
+        </body>
+      </html>
     </ThemeProvider>
   );
 }
