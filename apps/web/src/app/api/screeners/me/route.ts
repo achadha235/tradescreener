@@ -10,15 +10,24 @@ export async function GET(
   // fetch all screeners
 
   const authToken = request.headers.get("Authorization");
+
   if (!authToken) {
     return new NextResponse("Unauthorized", { status: 401 });
   }
 
-  const user = decrypt(authToken, process.env.JWT_SECRET as string);
+  try {
+    const user = decrypt(authToken, process.env.JWT_SECRET as string);
 
-  const screeners = await prisma.screener.findMany({
-    where: { userId: user.id },
-  });
+    const screeners = await prisma.screener.findMany({
+      where: { userId: user.id },
+    });
 
-  return NextResponse.json({ screeners });
+    return NextResponse.json({ screeners });
+  } catch (error) {
+    return new NextResponse("Unauthorized", { status: 401 });
+  }
+
+  // if (!user) {
+  //   return new NextResponse("Unauthorized", { status: 401 });
+  // }
 }

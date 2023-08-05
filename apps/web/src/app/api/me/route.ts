@@ -1,15 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getRequestUser } from "../getRequestUser";
+import { getUser } from "../getUser";
 
 // POST handler: Create a new API key for a user
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { slug: string } }
-) {
-  const user = await getRequestUser(request);
-  if (!user) {
-    return new NextResponse("Unauthorized", { status: 401 });
+export async function GET(request: NextRequest, { params }) {
+  let user;
+  try {
+    user = await getUser(request);
+  } catch (error) {
+    user = null;
   }
-
-  return NextResponse.json({ user });
+  return NextResponse.json(user);
 }

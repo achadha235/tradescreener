@@ -1,12 +1,13 @@
 "use client";
-import { Info } from "@mui/icons-material";
-import { CircularProgress, InputBase, Slider, Tooltip } from "@mui/material";
-import clsx from "clsx";
-import { debounce, filter, find, isNil, throttle } from "lodash";
 import { useInterpolatedRangeSlider as interpolatedRangeSlider } from "@/app/components/ScreenerFilter/rangeSlider";
+import { analytics, trackFullstory } from "@/tracking";
+import { Info } from "@mui/icons-material";
+import { InputBase, Slider, Tooltip } from "@mui/material";
+import clsx from "clsx";
+import Decimal from "decimal.js";
+import { find, isNil, pick } from "lodash";
 import numeral from "numeral";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import Decimal from "decimal.js";
 
 const stepSize = 0.01;
 const stepRange = [0.25, 0.8];
@@ -19,27 +20,6 @@ export function getNumberFormat(tag) {
     numberFormat = "0,0[.][00]%";
   }
   return numberFormat;
-}
-
-function getTextFromSliderXValue(x, numberFormat, sliderFn) {
-  if (x === 0 || x === 1) {
-    return "Any";
-  }
-  let y = sliderFn.f(x);
-  if ([-Infinity, Infinity].includes(y) || Number.isNaN(y)) {
-    return "Any";
-  }
-  if (Math.abs(y) <= 1e-7) {
-    return numeral(0).format(numberFormat);
-  }
-
-  const rounded = y?.toPrecision(3);
-  if (new Decimal(rounded).isZero()) {
-    return "0";
-  }
-  const num = numeral(rounded);
-  const formatted = num.format(numberFormat);
-  return formatted;
 }
 
 function ScreenerFilterHeader({ tag, filterActive }) {
@@ -115,6 +95,8 @@ export function ScreenerFilter({
     return getTextForY(sliderFn.f(x));
   }
 
+  const fetchCountRef = useRef(0);
+
   useEffect(() => {
     const y = sliderFn.f(upperboundX);
     upperboundInputRef.current.value = getTextForY(y);
@@ -139,50 +121,6 @@ export function ScreenerFilter({
     },
     [filterConditions]
   );
-
-  // useEffect(() => {
-  //   let lbFilter;
-  //   if (lowerboundFilter) {
-  //     lbFilter = lowerboundFilter;
-  //   } else {
-  //     lbFilter = {
-  //       field: tag.tag,
-  //       operator: "gte",
-  //     };
-  //   }
-  //   const y = sliderFn.f(lowerboundX);
-  //   if (y === -Infinity || y === Infinity) {
-  //     setLowerBoundFilter(null);
-  //     return;
-  //   }
-
-  //   setLowerBoundFilter({
-  //     ...lbFilter,
-  //     value: numeral(y).format("0[.][00000]"),
-  //   });
-  // }, [lowerboundX, setLowerBoundFilter, sliderFn]);
-
-  // useEffect(() => {
-  //   let ubFilter;
-  //   if (upperboundFilter) {
-  //     ubFilter = upperboundFilter;
-  //   } else {
-  //     ubFilter = {
-  //       field: tag.tag,
-  //       operator: "lte",
-  //     };
-  //   }
-  //   const y = sliderFn.f(upperboundX);
-  //   if (y === -Infinity || y === Infinity) {
-  //     setUpperBoundFilter(null);
-  //     return;
-  //   }
-
-  //   setUpperBoundFilter({
-  //     ...ubFilter,
-  //     value: numeral(y).format("0[.][00000]"),
-  //   });
-  // }, [upperboundX, setUpperBoundFilter, sliderFn]);
 
   useEffect(() => {
     if (!lowerboundFilter?.value || !sliderFn) {
@@ -215,11 +153,21 @@ export function ScreenerFilter({
       }
       return new Decimal(numeral(v).format("0[.][00000]")).toString();
     };
-    onConditionChanged({
+
+    const newCondition = {
       tag,
       lower: getVal(lowerboundInputRef.current.value),
       upper: getVal(upperboundInputRef.current.value),
-    });
+    };
+
+    onConditionChanged(newCondition);
+
+    const eventDetails = {
+      tag: tag.tag,
+      ...pick(newCondition, "lower", "upper"),
+    };
+    trackFullstory("filter changed", eventDetails);
+    analytics?.track("filter changed", eventDetails);
   };
 
   const onBlurUpperbound = (e) => {

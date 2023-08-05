@@ -8,19 +8,24 @@ import numeral from "numeral";
 import { useEffect, useState } from "react";
 import { usePapaParse } from "react-papaparse";
 import { getNumberFormat } from "./ScreenerFilter/ScreenerFilter";
+import { analytics, trackFullstory } from "@/tracking";
 
 const CSVDownloader = ({
+  screenerId,
   disabled,
   csvData,
   className,
   filename,
 }: {
+  screenerId;
   disabled;
   className?;
   csvData;
   filename;
 }) => {
   const handleDownload = () => {
+    trackFullstory("download csv", { filename, screenerId });
+    analytics?.track("download csv", { filename, screenerId });
     const blob = new Blob([csvData], { type: "text/csv;charset=utf-8;" });
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
@@ -34,6 +39,7 @@ const CSVDownloader = ({
 
   return (
     <Button
+      id="download-csv"
       disabled={disabled}
       size="small"
       className={className}
@@ -47,7 +53,12 @@ const CSVDownloader = ({
   );
 };
 
-export default function ScreenerTable({ loading, csv, screenerName }) {
+export default function ScreenerTable({
+  loading,
+  csv,
+  screenerName,
+  screenerId,
+}) {
   const [rows, setRows] = useState<any>({ headers: [], rows: [] });
   const { readString } = usePapaParse();
   const [csvData, setCSVData] = useState<any>([]);
@@ -149,14 +160,16 @@ export default function ScreenerTable({ loading, csv, screenerName }) {
           </div>
 
           <CSVDownloader
+            screenerId={screenerId}
             disabled={rows?.rows?.length === 0}
             csvData={csv}
             filename={`${kebabCase(screenerName)}.csv`}
           />
         </div>
 
-        {allDatatags && somerows && somerows?.length > 0 && (
+        {allDatatags && somerows && (
           <DataGrid
+            loading={isLoading}
             className="m-4"
             rows={somerows}
             columns={columns}

@@ -1,7 +1,6 @@
 import { URLSearchParams } from "url";
 
 export default async function fetchForCondition(condition: string) {
-  console.log("Filtering by condition", condition);
   const results: any[] = [];
   const url = "https://api-v2.intrinio.com/securities/screen";
   let currentPage = 0;

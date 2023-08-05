@@ -6,7 +6,9 @@ const { BullMQAdapter } = require("@bull-board/api/bullMQAdapter");
 const { ExpressAdapter } = require("@bull-board/express");
 
 const Redis = require("ioredis");
-const redis = new Redis(process.env.REDIS_URL || "redis://localhost:6380");
+const redisUrl = process.env.REDIS_URL || "redis://localhost:6380";
+console.log(redisUrl);
+const redis = new Redis(redisUrl);
 
 const someQueue = new Queue("stockScreener", { connection: redis }); // if you have a special connection to redis.
 
@@ -27,5 +29,4 @@ app.use("/admin/queues", serverAdapter.getRouter());
 app.listen(3008, () => {
   console.log("Running on 3008...");
   console.log("For the UI, open http://localhost:3008/admin/queues");
-  console.log("Make sure Redis is running on port 6379 by default");
 });

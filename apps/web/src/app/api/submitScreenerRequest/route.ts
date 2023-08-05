@@ -5,6 +5,7 @@ import { Queue } from "bullmq";
 import { v4 as uuidv4 } from "uuid";
 import { decrypt } from "../auth";
 import { redis } from "../redis";
+import { sendSlackMessage } from "../slack";
 
 const myQueue = new Queue("stockScreener", { connection: redis });
 // POST handler: Create a new API key for a user
@@ -37,6 +38,24 @@ export async function POST(
   });
 
   await myQueue.add("createScreener", screenerRequest);
+
+  let userString = "*User*: Anonymous";
+  if (user) {
+    userString = "*Email*: " + user.email + "\n*User ID*: `" + user.id + "`";
+  }
+
+  sendSlackMessage(
+    "New prompt submitted:\n" +
+      userString +
+      "\n" +
+      "> " +
+      data.screenerPrompt +
+      "\n*Link:* " +
+      process.env.NEXT_PUBLIC_APP_URL +
+      "/screener/" +
+      screenerRequest.id,
+    true
+  );
 
   return NextResponse.json({ success: true, screener: screenerRequest });
 }

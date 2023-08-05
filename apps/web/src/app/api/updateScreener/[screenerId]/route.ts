@@ -1,11 +1,10 @@
 import prisma from "@screener/db";
 import { NextRequest, NextResponse } from "next/server";
 
+import { analytics } from "@/app/api/tracking";
 import { Novu } from "@novu/node";
 import numeral from "numeral";
 import { encrypt } from "../../auth";
-import { useLocalStorage } from "usehooks-ts";
-
 const novu = new Novu(process.env.NOVU_API_KEY as string);
 
 export async function POST(
@@ -38,17 +37,20 @@ export async function POST(
     },
   });
 
+  const screenerData: any = screener.screenerData;
+  const numTickers = numeral(screenerData["tickers"].length).format("0,0");
+  const userPrompt = screenerData.userRequest.screenerPrompt;
+  const screenerName = screenerData.name;
+
   if (screener.user) {
-    const screenerData: any = screener.screenerData;
-    const numTickers = numeral(screenerData["tickers"].length).format("0,0");
-    const userPrompt = screenerData.userRequest.screenerPrompt;
-    const screenerName = screenerData.name;
     const token = encrypt(screener.user!, process.env.JWT_SECRET as string);
     const screenerLink = new URL(
       "/screener/" + screener.id,
       process.env.NEXT_PUBLIC_APP_URL as string
     );
     screenerLink.searchParams.set("auth", token);
+    screenerLink.searchParams.set("utm_medium", "email");
+    screenerLink.searchParams.set("utm_campaign", "screener-ready");
 
     await novu.trigger("screener-ready", {
       to: {
@@ -61,7 +63,31 @@ export async function POST(
         screener_url: screenerLink.toString(),
       },
     });
+
+    analytics.track({
+      event: "email sent",
+      userId: screener.user?.id || "anonymous-user",
+      properties: {
+        screenerId: screener.id,
+        screenerName: screenerName,
+        createdAt: screener.createdAt,
+        numTickers,
+        userPrompt,
+      },
+    });
   }
+
+  analytics.track({
+    event: "screener completed",
+    userId: screener.user?.id || "anonymous-user",
+    properties: {
+      screenerId: screener.id,
+      screenerName: screenerName,
+      createdAt: screener.createdAt,
+      numTickers,
+      userPrompt,
+    },
+  });
 
   return NextResponse.json({ success: true });
 }

@@ -5,9 +5,10 @@ import { Close, Lightbulb } from "@mui/icons-material";
 import { Box, Button, CircularProgress, Modal, Paper } from "@mui/material";
 import clsx from "clsx";
 import { groupBy, orderBy, uniq } from "lodash";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ScreenerFilter } from "./ScreenerFilter/ScreenerFilter";
 import { motion, AnimatePresence } from "framer-motion";
+import { analytics, trackFullstory } from "@/tracking";
 
 function SelectTagCategory({
   setCurrentTagType,
@@ -141,7 +142,7 @@ export function ScreenerControls({
   };
 
   return (
-    <div className="text-2xl relative bg-background-paper rounded-md p-2  min-h-[250px]">
+    <div className="text-2xl flex flex-col relative bg-background-paper rounded-md p-2  min-h-[250px]">
       {loading && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -202,8 +203,18 @@ export function ScreenerControls({
           </div>
         ))}
       </div>
-      <div className="w-full flex justify-end mt-4">
-        <Button startIcon={<Lightbulb />} onClick={() => setModalOpen(true)}>
+      <div className="w-full flex justify-end mt-auto py-2">
+        <Button
+          id="explain-screener"
+          variant="outlined"
+          startIcon={<Lightbulb />}
+          onClick={() => {
+            trackFullstory("explain", { screenerId: screener.id });
+            analytics?.track("explain", { screenerId: screener.id });
+
+            setModalOpen(true);
+          }}
+        >
           Explain
         </Button>
         <div className="ml-auto">
@@ -235,7 +246,7 @@ export function ScreenerControls({
           style={{ minHeight: "100vh" }}
         >
           <Paper
-            className="w-full max-w-2xl p-4 overflow-scroll relative"
+            className="w-full max-w-2xl p-4 pt-12  relative"
             onClick={(e) => {
               e.stopPropagation();
             }}
@@ -248,20 +259,22 @@ export function ScreenerControls({
             >
               <Close />
             </Button>
-            <div className="text-lg font-bold text-neutral-500 mb-4">
-              Explanation
+            <div className="max-h-[80vh] overflow-scroll  pb-20">
+              <div className="text-lg font-bold text-neutral-500 mb-4">
+                Explanation
+              </div>
+              <ol className="text-base gap-4 flex-col flex ">
+                {screener.screenerData.explanation.map((reason, i) => {
+                  if (
+                    reason.indexOf("Country") > -1 &&
+                    reason.indexOf("'United States of America'") > -1
+                  ) {
+                    return null;
+                  }
+                  return <li key={i}>{reason}</li>;
+                })}
+              </ol>
             </div>
-            <ol className="text-base gap-4 flex-col flex">
-              {screener.screenerData.explanation.map((reason, i) => {
-                if (
-                  reason.indexOf("Country") > -1 &&
-                  reason.indexOf("'United States of America'") > -1
-                ) {
-                  return null;
-                }
-                return <li key={i}>{reason}</li>;
-              })}
-            </ol>
           </Paper>
         </Box>
       </Modal>

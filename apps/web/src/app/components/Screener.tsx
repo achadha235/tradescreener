@@ -7,12 +7,14 @@ import { OtherScreeners } from "./OtherScreeners";
 import { ScreenerControls } from "./ScreenerControls";
 import { ScreenerPrompt } from "./ScreenerPrompt";
 import { ScreenerLoading } from "./ScreenerLoading";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useScreenerFilter from "@/client/runScreenerFilter";
 import clsx from "clsx";
 import { isNil } from "lodash";
+import { analytics } from "@/tracking";
 
 export default function Screener({ id }) {
+  const fetchCountRef = useRef(0);
   const [customCondition, setCustomCondition] = useState();
   const { isLoading, data } = useScreener(id);
   const status = data?.screener?.screenerData.status;
@@ -24,14 +26,13 @@ export default function Screener({ id }) {
     data: fetchScreenerData,
   } = useScreenerFilter({
     onSuccess: (data) => {
-      console.log("Screener filter success", data);
+      console.log("Screener filter success");
     },
     onError: (error) => {
       console.error("Error while running screener filter", error);
     },
   });
   useEffect(() => {
-    console.log("Run the screener");
     if (
       customCondition &&
       customCondition["clauses"] &&
@@ -103,9 +104,10 @@ export default function Screener({ id }) {
       )}
       {data.screener && (
         <ScreenerTable
+          screenerId={id}
           loading={isMutating}
           screenerName={data.screener.screenerData.name}
-          csv={fetchScreenerData?.result || data.screener.screenerData.csv}
+          csv={fetchScreenerData?.result}
         />
       )}
     </div>

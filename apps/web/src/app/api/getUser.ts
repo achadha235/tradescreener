@@ -1,21 +1,23 @@
 // import { getUserId } from "@/pages/api/auth/[auth0]";
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
+import { decrypt } from "./auth";
+import prisma from "@screener/db";
 
 export async function getUser(request: NextRequest) {
-  return null;
-  // const newHeaders = {};
-  // request.headers.forEach((value, key) => {
-  //   newHeaders[key] = value;
-  // });
-  // const result = await axios.get(`${process.env.AUTH0_BASE_URL}/api/auth/me`, {
-  //   headers: newHeaders,
-  // });
-  // const auth0User = result.data;
-  // if (!auth0User.email) {
-  //   return null;
-  // }
-  // const user = await prisma.user.findUniqueOrThrow({
-  //   where: { id: getUserId(auth0User.email) },
-  // });
-  // return user;
+  const authToken = request.headers.get("Authorization");
+
+  if (!authToken) {
+    return null;
+  }
+
+  try {
+    const decryptUser = decrypt(authToken, process.env.JWT_SECRET as string);
+    const user = await prisma.user.findFirst({
+      where: { id: decryptUser.id },
+    });
+
+    return user;
+  } catch (error) {
+    return null;
+  }
 }

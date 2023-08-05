@@ -7,7 +7,7 @@ export default function CommunityScreeners() {
   const { data, isLoading } = useScreeners();
   if (isLoading || !data) {
     return (
-      <div className="relative grid-flow-row auto-rows-fr grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl p-2 mb-52">
+      <div className="relative grid-flow-row auto-rows-fr grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl p-2">
         {range(6).map((i) => {
           return (
             <Skeleton
@@ -35,7 +35,7 @@ export default function CommunityScreeners() {
     );
   }
   return (
-    <div className="relative grid-flow-row auto-rows-fr grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl p-2 mb-52">
+    <div className="relative grid-flow-row auto-rows-fr grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl p-2">
       {data?.screeners.map((screener) => {
         return <ScreenerCard key={screener.id} screener={screener} />;
       })}

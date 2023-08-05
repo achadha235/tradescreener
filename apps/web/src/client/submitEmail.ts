@@ -20,6 +20,7 @@ export default function useSubmitEmail({ onSuccess, onError }) {
     {
       onSuccess: (...args) => {
         mutate(`${process.env.NEXT_PUBLIC_APP_URL}/api/screeners/me`);
+        mutate(`${process.env.NEXT_PUBLIC_APP_URL}/api/me`);
         onSuccess && onSuccess(...args);
       },
       onError: onError,

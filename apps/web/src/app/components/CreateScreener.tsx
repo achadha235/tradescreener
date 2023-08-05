@@ -1,4 +1,5 @@
 import useSubmitScreenerRequest from "@/client/submitScreenerRequest";
+import { analytics, trackFullstory } from "@/tracking";
 import { Search } from "@mui/icons-material";
 import { Button, CircularProgress, InputBase } from "@mui/material";
 import clsx from "clsx";
@@ -9,7 +10,7 @@ export default function CreateScreener({ defaultValue }: { defaultValue? }) {
   const success = false;
   const [active, setActive] = useState(false);
   const [screenerPrompt, setScreenerPrompt] = useState(defaultValue || "");
-  const [email, setEmail] = useState("");
+
   const router = useRouter();
   const onSubmitRequestSuccess = (data) => {
     if (data.success) {
@@ -17,8 +18,8 @@ export default function CreateScreener({ defaultValue }: { defaultValue? }) {
     }
   };
 
-  const onSubmitRequestError = () => {
-    alert("error");
+  const onSubmitRequestError = (error) => {
+    console.error("Error submitting prompt request", error);
   };
 
   const { trigger, data, isMutating, error } = useSubmitScreenerRequest({
@@ -26,7 +27,14 @@ export default function CreateScreener({ defaultValue }: { defaultValue? }) {
     onSuccess: onSubmitRequestSuccess,
   });
   function onSubmitRequestClicked() {
-    trigger(JSON.stringify({ screenerPrompt, email }));
+    console.log("Submitting prompt request", screenerPrompt);
+    trackFullstory("submit prompt", {
+      prompt: screenerPrompt,
+    });
+    analytics?.track("submit prompt", {
+      prompt: screenerPrompt,
+    });
+    trigger(JSON.stringify({ screenerPrompt }));
   }
 
   const requestScreen = (
@@ -54,7 +62,11 @@ export default function CreateScreener({ defaultValue }: { defaultValue? }) {
         />
         <Button
           onClick={onSubmitRequestClicked}
-          disabled={isMutating || defaultValue === screenerPrompt}
+          disabled={
+            isMutating ||
+            defaultValue === screenerPrompt ||
+            screenerPrompt.trim().length === 0
+          }
           startIcon={isMutating ? <CircularProgress size={10} /> : <Search />}
           className="mt-4 ml-auto"
           variant="contained"
