@@ -30,10 +30,6 @@ export default function Tracking({}) {
 
   const [userToken, setUserToken] = useLocalStorage<any>("userToken", null);
 
-  // const removeAuthSearchParam = useCallback(() => {
-  //   // Get the current URL
-  // }, [searchParams]);
-
   useEffect(() => {
     let url = new URL(window.location.href);
     // Remove the 'auth' parameter

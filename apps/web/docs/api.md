@@ -1,5 +1,0 @@
-- App page should show login if the user is not logged in
-- App page should show the pricing page if the user is not already a customer on the app
-- User should be able to checkout
-- The apps subscription should be updated to reflect the new subscription with the webhook
-- App page should show the chat if the user already has a subscription

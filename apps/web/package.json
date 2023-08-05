@@ -11,7 +11,6 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@auth0/nextjs-auth0": "^2.6.2",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.11.16",
@@ -42,8 +41,6 @@
     "numeral": "^2.0.6",
     "postcss": "8.4.24",
     "react": "18.2.0",
-    "react-contenteditable": "^3.3.7",
-    "react-css-loaders": "^0.0.6",
     "react-dom": "18.2.0",
     "react-papaparse": "^4.1.0",
     "swr": "^2.2.0",
