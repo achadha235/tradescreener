@@ -1,4 +1,4 @@
-import prisma from "@screener/db";
+import prisma from "@/database";
 import { NextRequest, NextResponse } from "next/server";
 
 // POST handler: Create a new API key for a user

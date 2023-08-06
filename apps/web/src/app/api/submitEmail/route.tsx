@@ -1,4 +1,4 @@
-import prisma from "@screener/db";
+import prisma from "@/database";
 import { NextRequest, NextResponse } from "next/server";
 import { v4 as uuidv4 } from "uuid";
 import { Novu } from "@novu/node";

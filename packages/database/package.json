@@ -12,7 +12,7 @@
     },
     "main": "index.ts",
     "dependencies": {
-        "@prisma/client": "4.16.1",
+        "@prisma/client": "^4.16.1",
         "commander": "^8.3.0",
         "got": "^11.8.3",
         "prisma": "^4.16.1"

@@ -1,7 +1,7 @@
 // import { getUserId } from "@/pages/api/auth/[auth0]";
 import { NextRequest, NextResponse } from "next/server";
 import { decrypt } from "./auth";
-import prisma from "@screener/db";
+import prisma from "@/database";
 
 export async function getUser(request: NextRequest) {
   const authToken = request.headers.get("Authorization");
