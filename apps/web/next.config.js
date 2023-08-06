@@ -3,13 +3,15 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-
-  outputFileTracing: {
-    "*": [
-      "./node_modules/@swc/core-linux-x64-gnu",
-      "./node_modules/@swc/core-linux-x64-musl",
-    ],
+  experimental: {
+    outputFileTracing: {
+      "*": [
+        "./node_modules/@swc/core-linux-x64-gnu",
+        "./node_modules/@swc/core-linux-x64-musl",
+      ],
+    },
   },
+
   async headers() {
     return [
       {
