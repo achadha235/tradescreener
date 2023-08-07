@@ -5,8 +5,8 @@ export const analytics = AnalyticsBrowser.load({
   writeKey: process.env.NEXT_PUBLIC_SEGMENT_WRITE_KEY,
 });
 
-export const useFullStory = process.env.NODE_ENV === "production";
-// export const useFullStory = true;
+// export const useFullStory = process.env.NODE_ENV === "production";
+export const useFullStory = true;
 
 if (typeof window !== "undefined") {
   (window as any)["analytics"] = analytics;
