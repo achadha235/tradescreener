@@ -21,6 +21,7 @@ export async function getUser(request: NextRequest) {
     console.log("Found user: ", user);
     return user;
   } catch (error) {
+    console.error("Error: ", error);
     return null;
   }
 }
