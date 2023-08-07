@@ -31,7 +31,7 @@ export function RootLayout({ children }: { children: React.ReactNode }) {
               >
                 <div
                   className={clsx(
-                    "text-base font-light p-4 text-neutral-500  mx-auto max-w-6xl",
+                    "text-sm font-light p-4 text-neutral-500  mx-auto max-w-6xl",
                     {
                       "pb-52 ": pathname === "/",
                     }
@@ -41,7 +41,7 @@ export function RootLayout({ children }: { children: React.ReactNode }) {
                   informational purposes only and does not constitute investment
                   advice or any other sort of advice, and you should not treat
                   any of the {"site's"} content as such. By using
-                  Tradescreener.ai, you agree to{" "}
+                  Tradescreener.ai, you agree to the{" "}
                   <a
                     target="_blank"
                     className="font-bold underline"
