@@ -19,6 +19,9 @@ export function RootLayout({ children }: { children: React.ReactNode }) {
       <CssBaseline />
 
       <html lang="en">
+        <head>
+          <link rel="icon" href="/favicon.svg" sizes="any" />
+        </head>
         <body className={clsx("w-screen h-[100dvh]")}>
           <AppHeader />
           <AnimatePresence mode="wait">
