@@ -42,6 +42,18 @@ export default function Screener({ id }) {
     }
   }, [customCondition]);
 
+  useEffect(() => {
+    const screenerName = data?.screener?.screenerData?.name;
+    const screenerNumberID = "Screener #" + parseInt(id?.slice(-5), 16);
+    const displayId = screenerName || screenerNumberID;
+    if (displayId) {
+      document.title = "Tradescreener.ai | " + displayId;
+      return () => {
+        document.title = "Tradescreener.ai";
+      };
+    }
+  }, [data]);
+
   let screenerIsReady = false;
   if (status === "completed") {
     screenerIsReady = true;
@@ -81,10 +93,9 @@ export default function Screener({ id }) {
   if (!screenerIsReady) {
     return (
       <div className="max-w-8xl mx-auto flex flex-col gap-4 mt-10 px-4">
-        {screenerTitle}
         <ScreenerPrompt prompt={screenerPrompt} />
         <ScreenerLoading screener={data.screener} />
-        <OtherScreeners />
+        <OtherScreeners target={"_blank"} />
       </div>
     );
   }

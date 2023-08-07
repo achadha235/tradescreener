@@ -45,7 +45,7 @@ export function AccountButton() {
       <>
         <Button
           size="small"
-          className=" min-w-[140px]"
+          className=" min-w-fit"
           aria-controls={open ? "fade-menu" : undefined}
           aria-haspopup="true"
           aria-expanded={open ? "true" : undefined}

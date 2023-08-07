@@ -21,11 +21,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const ogImageUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/og.png`;
   return (
     <ThemeProvider theme={themeOptions}>
       <CssBaseline />
 
       <html lang="en">
+        <head>
+          <title>Tradescreener.ai</title>
+
+          <meta
+            name="description"
+            content=" Screen stocks using with AI. Try it today for free."
+          />
+
+          <meta property="og:image" content={ogImageUrl} />
+
+          <link
+            rel="icon"
+            href="favicon.svg"
+            sizes="any"
+            type="image/svg+xml"
+          />
+        </head>
         <body className={clsx("w-screen h-[100dvh]")}>
           <AppHeader />
           <AnimatePresence mode="wait">

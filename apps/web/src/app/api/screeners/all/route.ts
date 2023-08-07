@@ -7,13 +7,19 @@ export async function GET(
   { params }: { params: { slug: string } }
 ) {
   if (request.url) {
-    //pass
+    //pass next js bug:this is needed to get nextjs to make the route dynamic
   }
 
-  const screeners = await prisma.screener.findMany();
-  const filtered = screeners.filter((screener: any) => {
-    return screener.screenerData.status === "completed";
+  const screeners = await prisma.screener.findMany({
+    orderBy: [{ createdAt: "desc" }],
+    where: {
+      screenerData: {
+        path: ["status"],
+        equals: "completed",
+      },
+    },
+    take: 100,
   });
 
-  return NextResponse.json({ screeners: filtered });
+  return NextResponse.json({ screeners });
 }

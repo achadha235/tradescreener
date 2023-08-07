@@ -58,7 +58,6 @@ export function FeedbackButton() {
           />
         </div>
         <div className="flex flex-col p-2">
-          <p className="text-sm">Add a comment</p>
           <InputBase
             disabled={isMutating}
             value={comment}
@@ -68,7 +67,7 @@ export function FeedbackButton() {
             rows={5}
             minRows={5}
             multiline
-            placeholder="Type your message here..."
+            placeholder="Add a comment..."
           />
         </div>
       </div>
@@ -77,7 +76,7 @@ export function FeedbackButton() {
           isMutating ? <CircularProgress size={10} /> : <CommentRounded />
         }
         onClick={onSubmitFeedback}
-        disabled={isNil(rating) || comment.length === 0 || isMutating}
+        disabled={(isNil(rating) && comment.length === 0) || isMutating}
         className="mt-16"
         fullWidth
         size="large"

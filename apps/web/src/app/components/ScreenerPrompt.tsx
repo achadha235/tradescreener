@@ -13,7 +13,7 @@ export function ScreenerPrompt({ prompt }) {
   return (
     <div className="flex flex-col">
       <div className="text-2xl bg-background-paper rounded-md border border-neutral-500 border-solid p-4">
-        {prompt}
+        {prompt || <span className=" opacity-60"> No prompt provided </span>}
       </div>
       <Button onClick={onCopyPrompt} className="self-end">
         Modify Prompt

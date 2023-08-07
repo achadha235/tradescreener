@@ -1,7 +1,15 @@
 import useScreeners from "@/client/getAllScreeners";
 import { ScreenerCard } from "./ScreenerCard";
 
-export function OtherScreeners({ cta, title }: { cta?; title? }) {
+export function OtherScreeners({
+  cta,
+  title,
+  target,
+}: {
+  cta?;
+  title?;
+  target?;
+}) {
   const { data, isLoading } = useScreeners();
   if (isLoading) {
     return null;
@@ -16,7 +24,13 @@ export function OtherScreeners({ cta, title }: { cta?; title? }) {
       </div>
       <div className="relative gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-1 overflow-x-scroll overflow-y-hidden">
         {data.screeners.map((screener) => {
-          return <ScreenerCard key={screener.id} screener={screener} />;
+          return (
+            <ScreenerCard
+              target={target}
+              key={screener.id}
+              screener={screener}
+            />
+          );
         })}
       </div>
     </div>

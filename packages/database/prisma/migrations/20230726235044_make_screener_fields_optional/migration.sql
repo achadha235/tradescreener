@@ -1,3 +1,0 @@
--- AlterTable
-ALTER TABLE "Screener" ALTER COLUMN "name" DROP NOT NULL,
-ALTER COLUMN "screenerData" DROP NOT NULL;
