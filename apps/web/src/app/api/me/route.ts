@@ -7,6 +7,7 @@ export async function GET(request: NextRequest, { params }) {
   try {
     user = await getUser(request);
   } catch (error) {
+    console.error(error);
     user = null;
   }
   return NextResponse.json(user);
