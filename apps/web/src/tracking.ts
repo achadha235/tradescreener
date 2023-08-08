@@ -8,6 +8,9 @@ export const analytics = AnalyticsBrowser.load({
 // export const useFullStory = process.env.NODE_ENV === "production";
 export const useFullStory = true;
 
+export let fsReady = false;
+export let segmentReady = false;
+
 if (typeof window !== "undefined") {
   (window as any)["analytics"] = analytics;
 
@@ -106,6 +109,16 @@ if (typeof window !== "undefined") {
   );
   fbq("init", "193438603507630");
   fbq("track", "PageView");
+
+  window["_fs_ready"] = function () {
+    console.log("Fullstory is ready");
+    fsReady = true;
+  };
+
+  analytics.ready(() => {
+    console.log("Segment is ready");
+    segmentReady = true;
+  });
 }
 
 export function trackFullstory(eventName, properties) {

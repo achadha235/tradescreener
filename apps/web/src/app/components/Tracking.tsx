@@ -1,6 +1,6 @@
 "use client";
 import useGetMe from "@/client/getMe";
-import { analytics } from "@/tracking";
+import { analytics, fsReady, segmentReady } from "@/tracking";
 import {
   useParams,
   usePathname,
@@ -29,7 +29,7 @@ export default function Tracking({}) {
   }, [pathname, searchParams]);
 
   const [userToken, setUserToken] = useLocalStorage<any>("userToken", null);
-  const [fsReady, setFSReady] = useState(false);
+
   useEffect(() => {
     let url = new URL(window.location.href);
     // Remove the 'auth' parameter
@@ -41,40 +41,31 @@ export default function Tracking({}) {
     }
   }, [searchParams]);
 
-  // Identify users
   useEffect(() => {
-    console.log("Triggered user change");
-    if (isLoading || !user?.id) {
-      console.log("Not identifying user");
+    if (!fsReady || isLoading) {
       return;
     }
-    console.log("Identifying user", user.id, user.email);
-    if (!analytics) {
-      console.log("Analytics not ready");
-    }
-
-    analytics?.identify(user.id, {
-      email: user.email,
-    });
-  }, [user?.id, isLoading]);
-
-  useEffect(() => {
-    if (isLoading || !user?.id || !fsReady) {
-      console.log("Not identifying fullstory user");
+    if (!user) {
       return;
     }
-    console.log("Identifying user for FullStory", user.id, user.email);
+    console.log("Identifed Fullstory user:", user.id, user.email);
     FS?.identify(user.id, {
       email: user.email,
     });
-  }, [user?.id, isLoading, fsReady]);
+  }, [fsReady, isLoading]);
 
   useEffect(() => {
-    window["_fs_ready"] = function () {
-      console.log("Fullstory is ready");
-      setFSReady(true);
-    };
-  }, []);
+    if (!segmentReady || isLoading) {
+      return;
+    }
+    if (!user) {
+      return;
+    }
+    console.log("Identifed Segment user:", user.id, user.email);
+    analytics?.identify(user.id, {
+      email: user.email,
+    });
+  }, [segmentReady, isLoading]);
 
   return <div className="hidden" />;
 }
