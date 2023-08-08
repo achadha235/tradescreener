@@ -11,7 +11,6 @@ const fetcher = (userToken) => (url) =>
 
 export default function useGetMe() {
   const [userToken, setUserToken] = useLocalStorage("userToken", null);
-
   const props = useSWR(
     `${process.env.NEXT_PUBLIC_APP_URL}/api/me`,
     fetcher(userToken)

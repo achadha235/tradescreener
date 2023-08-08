@@ -13,12 +13,13 @@ import { useLocalStorage } from "usehooks-ts";
 declare var FS;
 
 export default function Tracking({}) {
-  const { data: user, isLoading } = useGetMe();
+  const { data, isLoading } = useGetMe();
   const params = useParams();
   const selectedLayoutSegment = useSelectedLayoutSegment();
 
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const user = data?.user;
 
   // Track page changes
   useEffect(() => {

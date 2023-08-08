@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import { RootLayout } from "./RootLayout";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL as string),
   title: "Tradescreener.ai",
   description: "Kickstart your next trade idea with AI. Try it today for free.",
   openGraph: {
