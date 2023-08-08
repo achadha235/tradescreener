@@ -8,11 +8,14 @@ import {
   Fade,
   Menu,
   MenuItem,
+  Modal,
+  Paper,
 } from "@mui/material";
 import { orderBy, partition } from "lodash";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useLocalStorage } from "usehooks-ts";
+import { SignupPrompt } from "./SignupPrompt";
 
 export function AccountButton() {
   const [mounted, setMounted] = useState(false);
@@ -32,8 +35,39 @@ export function AccountButton() {
     setMounted(true);
   }, []);
 
+  const [signupModalOpen, setSignupModalOpen] = useState(false);
+
+  useEffect(() => {
+    if (userToken && signupModalOpen) {
+      setSignupModalOpen(false);
+    }
+  }, [userToken, signupModalOpen]);
+
   if (!userToken || !mounted) {
-    return null;
+    return (
+      <>
+        <Button
+          onClick={() => {
+            setSignupModalOpen(true);
+          }}
+          size="small"
+        >
+          Sign Up
+        </Button>
+        <Modal
+          onClose={() => {
+            setSignupModalOpen(true);
+          }}
+          open={signupModalOpen}
+          className="flex justify-center items-center"
+        >
+          <Paper className="w-full max-w-xl p-10">
+            <div className="text-3xl">Sign Up</div>
+            <SignupPrompt screener={{}} />
+          </Paper>
+        </Modal>
+      </>
+    );
   }
 
   if (userToken) {

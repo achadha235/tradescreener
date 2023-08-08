@@ -30,14 +30,22 @@ export async function POST(
       email,
     },
   });
+  if (screenerId) {
+    const screener = await prisma.screener.findFirst({
+      where: { id: screenerId },
+      include: { user: true },
+    });
 
-  const screener = await prisma.screener.findFirst({
-    where: { id: screenerId },
-    include: { user: true },
-  });
+    if (!screener) {
+      return NextResponse.json({ success: false });
+    }
 
-  if (!screener) {
-    return NextResponse.json({ success: false });
+    if (user && screener && screener.user?.id !== user.id) {
+      await prisma.screener.update({
+        where: { id: screenerId },
+        data: { user: { connect: { id: user.id } } },
+      });
+    }
   }
 
   await novu.subscribers.identify(user.id, {
@@ -59,13 +67,6 @@ export async function POST(
         user.id +
         "`"
     );
-  }
-
-  if (user && screener && screener.user?.id !== user.id) {
-    await prisma.screener.update({
-      where: { id: screenerId },
-      data: { user: { connect: { id: user.id } } },
-    });
   }
 
   const token = encrypt(user, process.env.JWT_SECRET as string);

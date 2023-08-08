@@ -5,7 +5,7 @@ import useSubmitEmail from "@/client/submitEmail";
 import { Check } from "@mui/icons-material";
 import { useLocalStorage } from "usehooks-ts";
 
-export function SignupPrompt({ screener }) {
+export function SignupPrompt({ screener, cta }: { screener?; cta? }) {
   const [userToken, setUserToken] = useLocalStorage("userToken", null);
   const [email, setEmail] = useState("");
 
@@ -21,7 +21,7 @@ export function SignupPrompt({ screener }) {
   });
 
   const onEmailSubmitted = () => {
-    trigger(JSON.stringify({ email, screenerId: screener.id }));
+    trigger(JSON.stringify({ email, screenerId: screener?.id }));
   };
 
   if (userToken) {
@@ -35,8 +35,8 @@ export function SignupPrompt({ screener }) {
   return (
     <div className="mt-14 flex flex-col gap-4">
       <div className="font-normal">
-        Create a free account to save your screener and get notified when its
-        ready.
+        {cta ||
+          "Create a free account to save your screener and get notified when its ready."}
       </div>
       <div className="w-full flex gap-2">
         <InputBase

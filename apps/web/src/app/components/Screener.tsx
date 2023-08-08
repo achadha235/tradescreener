@@ -12,10 +12,13 @@ import useScreenerFilter from "@/client/runScreenerFilter";
 import clsx from "clsx";
 import { isNil } from "lodash";
 import { analytics } from "@/tracking";
+import { SignupPrompt } from "./SignupPrompt";
+import { useLocalStorage } from "usehooks-ts";
 
 export default function Screener({ id }) {
   const fetchCountRef = useRef(0);
   const [customCondition, setCustomCondition] = useState();
+  const [userToken, setUserToken] = useLocalStorage("userToken", null);
   const { isLoading, data } = useScreener(id);
   const status = data?.screener?.screenerData.status;
   const screenerPrompt =
@@ -121,6 +124,17 @@ export default function Screener({ id }) {
           csv={fetchScreenerData?.result}
         />
       )}
+
+      <div className="max-w-xl mx-auto mb-10">
+        {!userToken && (
+          <SignupPrompt
+            cta={
+              "Sign up for a free account to create your own screeners and get access to exclusive features."
+            }
+            screener={{}}
+          />
+        )}
+      </div>
     </div>
   );
 }
