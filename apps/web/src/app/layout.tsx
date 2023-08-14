@@ -2,6 +2,7 @@
 import "./globals.css";
 import { Metadata } from "next";
 import { RootLayout } from "./RootLayout";
+import { Fab } from "@mui/material";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL as string),

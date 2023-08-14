@@ -56,7 +56,7 @@ export function AccountButton() {
         </Button>
         <Modal
           onClose={() => {
-            setSignupModalOpen(true);
+            setSignupModalOpen(false);
           }}
           open={signupModalOpen}
           className="flex justify-center items-center"

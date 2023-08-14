@@ -1,5 +1,5 @@
 {
-    "name": "ai-screener-worker",
+    "name": "@screener/ai-worker",
     "version": "1.0.0",
     "private": true,
     "scripts": {

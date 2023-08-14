@@ -7,7 +7,7 @@ import { decrypt } from "../auth";
 import { redis } from "../redis";
 import { sendSlackMessage } from "../slack";
 
-const myQueue = new Queue("stockScreener", { connection: redis });
+const queue = new Queue("stockScreener", { connection: redis });
 // POST handler: Create a new API key for a user
 export async function POST(
   request: NextRequest,
@@ -29,6 +29,7 @@ export async function POST(
   const screenerRequest = await prisma.screener.create({
     data: {
       id: "scr_" + uuidv4(),
+      ip: user?.id || request.ip,
       ...(user ? { userId: user.id } : {}),
       screenerData: {
         status: "pending",
@@ -37,7 +38,7 @@ export async function POST(
     },
   });
 
-  await myQueue.add("createScreener", screenerRequest);
+  await queue.add("createScreener", screenerRequest);
 
   let userString = "*User*: Anonymous";
   if (user) {

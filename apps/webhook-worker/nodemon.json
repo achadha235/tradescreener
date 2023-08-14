@@ -1,0 +1,11 @@
+{
+    "watch": [
+        "dist"
+    ],
+    "ext": "js,json",
+    "ignore": [
+        "node_modules"
+    ],
+    "exec": "node dist/index.js",
+    "delay": "100ms"
+}
